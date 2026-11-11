@@ -14,10 +14,10 @@ The application is a static, content-driven personal portfolio. No database, API
 
 ## Getting started
 
-Use **Node.js 22 or later** (Node 24 is also supported).
+Use **Node.js 24** (`nvm use`).
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
@@ -50,7 +50,7 @@ public/
 
 ## Editing content
 
-Update `data/portfolio.ts` to change the professional summary, focus areas, technical skills, employment history, and education. Edit `app/page.tsx` to change page layout or sections.
+Update `data/portfolio.ts` to change the professional summary, case studies, conceptual integration workflow, technical skills, employment history, and education. Edit `app/page.tsx` to change page layout or sections.
 
 The shadcn/ui CLI is configured via `components.json`. You can add components with:
 
@@ -64,4 +64,4 @@ Deploy using a standard Next.js host such as Vercel, or run `npm run build && np
 
 ## Content
 
-Career details are based on the supplied resume. Work examples describe application areas; no fabricated project metrics or confidential client data are included.
+Career details are based on the supplied resume. Case studies describe verified contributions; the travel diagram is explicitly conceptual, and no fabricated project metrics or confidential client data are included.

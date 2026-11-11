@@ -5,10 +5,9 @@ import { ArrowUpRight, Menu, X } from "lucide-react";
 import { profile } from "@/data/portfolio";
 
 const links = [
-  { label: "Selected work", href: "#work" },
-  { label: "Experience", href: "#experience" },
-  { label: "Capabilities", href: "#capabilities" },
   { label: "About", href: "#about" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export function Header() {
@@ -46,9 +45,6 @@ export function Header() {
             </a>
           ))}
         </nav>
-        <a className="header-contact" href={`mailto:${profile.email}`}>
-          Let’s talk <ArrowUpRight size={16} aria-hidden="true" />
-        </a>
         <button
           ref={toggleRef}
           className="menu-toggle"
@@ -73,10 +69,6 @@ export function Header() {
             <ArrowUpRight size={16} aria-hidden="true" />
           </a>
         ))}
-        <a href="#contact" onClick={() => setOpen(false)}>
-          Contact
-          <ArrowUpRight size={16} aria-hidden="true" />
-        </a>
       </nav>
     </header>
   );

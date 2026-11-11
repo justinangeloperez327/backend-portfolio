@@ -8,7 +8,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Header } from "@/components/portfolio/header";
-import { Workflow } from "@/components/portfolio/workflow";
 import {
   caseStudies,
   education,
@@ -157,55 +156,32 @@ export default function Home() {
           </div>
         </section>
         <section id="projects" className="section container">
-          <div className="section-heading-row">
-            <SectionTitle
-              label="Projects"
-              title="Selected projects."
-              description="Travel integrations, real estate operations, and hospital systems."
-            />
-            <span className="section-aside">
-              Real estate · Travel · Healthcare
-            </span>
-          </div>
-          <div className="case-studies">
-            {caseStudies.map((study) => (
-              <article id={study.id} key={study.id} className="case-study">
-                <div className="case-overview">
-                  <p className="eyebrow">
-                    {study.domain} <span>/ Professional project</span>
-                  </p>
-                  <h3>{study.title}</h3>
-                  <p className="project-summary">{study.summary}</p>
-                  <div className="tag-list">
-                    {study.tags.map((tag) => (
-                      <Badge variant="outline" key={tag}>
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-                <div className="case-details">
-                  <div>
-                    <h4>The project</h4>
-                    <p>{study.problem}</p>
-                  </div>
-                  <div>
-                    <h4>My work</h4>
-                    <p>{study.contribution}</p>
-                  </div>
-                  <div className="case-outcome">
-                    <h4>Delivery</h4>
-                    <p>{study.outcome}</p>
-                  </div>
-                  {study.id === "skyunitech" && <Workflow />}
-                </div>
-                <div className="case-scope">
-                  <span className="technical-label">Application scope</span>
-                  <ul>
-                    {study.scope.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
+          <h2 className="projects-heading">Project</h2>
+          <div className="project-grid">
+            {caseStudies.map((project) => (
+              <article
+                id={project.id}
+                key={project.id}
+                className="project-card"
+              >
+                <h3>{project.name}</h3>
+                <p className="project-description">{project.description}</p>
+                <div className="project-stack">
+                  <p className="technical-label">Tech stack</p>
+                  {project.techStack.length > 0 ? (
+                    <ul
+                      className="tag-list"
+                      aria-label={`${project.name} tech stack`}
+                    >
+                      {project.techStack.map((tech) => (
+                        <li key={tech}>
+                          <Badge variant="outline">{tech}</Badge>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="stack-pending">Not specified</p>
+                  )}
                 </div>
               </article>
             ))}

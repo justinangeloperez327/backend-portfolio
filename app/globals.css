@@ -409,55 +409,48 @@ h1 {
 .capability a {
   margin-top: auto;
 }
-.section-heading-row {
+.projects-heading {
+  font-size: clamp(32px, 3.2vw, 44px);
+  margin: 0 0 32px;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+.project-card {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 24px;
-  margin-bottom: 40px;
-}
-.section-aside {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--muted-foreground);
-  padding-bottom: 5px;
-}
-.case-studies {
-  display: grid;
-  gap: 24px;
-}
-.case-study {
-  display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: 32px 64px;
-  padding: 40px;
-  background: var(--card);
+  flex-direction: column;
+  min-width: 0;
+  padding: 28px;
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 8px;
+  background: var(--card);
   scroll-margin-top: 112px;
 }
-.case-overview .eyebrow span {
-  color: var(--muted-foreground);
-  letter-spacing: 0;
-  text-transform: none;
+.project-card h3 {
+  font-size: 24px;
+  margin: 0 0 16px;
 }
-.case-overview h3 {
-  font-size: clamp(30px, 3vw, 42px);
-  margin: 20px 0 12px;
-  letter-spacing: -0.045em;
-  overflow-wrap: anywhere;
-}
-.project-summary {
-  font-size: 18px;
-  line-height: 1.6;
-  margin: 0 0 24px;
-  max-width: 320px;
+.project-description {
   color: var(--muted-foreground);
+  font-size: 17px;
+  line-height: 1.7;
+  margin: 0 0 28px;
+}
+.project-stack {
+  margin-top: auto;
+}
+.project-stack > .technical-label {
+  margin: 0 0 12px;
 }
 .tag-list {
   display: flex;
-  gap: 8px;
   flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 .tag-list [data-slot="badge"] {
   border-color: var(--border);
@@ -466,152 +459,12 @@ h1 {
   font-weight: 400;
   padding: 5px 9px;
   border-radius: 4px;
+  white-space: normal;
 }
-.case-details {
-  display: grid;
-  gap: 24px;
-  align-content: start;
-}
-.case-details > div > h4 {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  font-weight: 500;
-  margin: 0 0 8px;
-  color: var(--muted-foreground);
-}
-.case-details > div > p {
+.stack-pending {
   margin: 0;
-  color: var(--foreground);
-  font-size: 17px;
-  line-height: 1.75;
-}
-.case-outcome {
-  border-left: 2px solid var(--primary);
-  padding-left: 16px;
-}
-.case-scope {
-  grid-column: 1/-1;
-  display: flex;
-  align-items: baseline;
-  gap: 32px;
-  padding-top: 24px;
-  border-top: 1px solid var(--border);
-}
-.case-scope .technical-label {
-  flex-shrink: 0;
-}
-.case-scope ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 24px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  font-size: 13px;
-}
-.case-scope li {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.case-scope li::before {
-  content: "";
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: var(--primary);
-  flex-shrink: 0;
-}
-.workflow {
-  margin: 4px 0 0;
-  padding: 24px;
-  background: var(--background);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-}
-.workflow-heading {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-}
-.workflow-heading .eyebrow {
-  font-size: 10px;
-}
-.workflow h4 {
-  font-size: 20px;
-  margin: 12px 0 24px;
-}
-.workflow-application {
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--primary);
-  padding: 16px;
-  background: var(--card);
-}
-.node-label {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--primary);
-  display: block;
-  margin-bottom: 8px;
-}
-.workflow-application strong {
-  font-weight: 500;
-  font-family: var(--font-heading);
-  font-size: 18px;
-  display: block;
-}
-.workflow-application p {
-  font-size: 13px;
-  margin-top: 4px;
-  color: var(--muted-foreground);
-}
-.workflow-connection {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  color: var(--primary);
-  padding: 10px 0;
-}
-.workflow-connection span {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--muted-foreground);
-}
-.workflow-providers {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-}
-.workflow-providers div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 8px;
-  border: 1px solid var(--border);
-  background: var(--card);
-  padding: 12px;
   font-size: 14px;
-}
-.workflow-providers svg {
-  color: var(--primary);
-  flex-shrink: 0;
-}
-.workflow-contribution {
-  font-size: 13px;
-  margin: 20px 0 12px;
-}
-.workflow figcaption {
-  font-size: 12px;
   color: var(--muted-foreground);
-  line-height: 1.6;
 }
 .contact {
   border-top: 1px solid var(--border);
@@ -669,19 +522,18 @@ h1 {
   }
 }
 @media (max-width: 1100px) {
-  .case-study {
-    column-gap: 40px;
-    padding: 32px;
-  }
-  .section-aside {
-    display: none;
-  }
   .about-layout,
   .experience-layout {
     gap: 48px;
   }
 }
 @media (max-width: 900px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+  .project-card {
+    padding: 24px;
+  }
   .container {
     width: calc(100% - 48px);
   }
@@ -709,15 +561,6 @@ h1 {
   }
   .capabilities {
     grid-template-columns: repeat(2, 1fr);
-  }
-  .case-study {
-    grid-template-columns: 1fr;
-  }
-  .project-summary {
-    max-width: 100%;
-  }
-  .workflow {
-    max-width: 560px;
   }
 }
 @media (max-width: 600px) {
@@ -754,42 +597,8 @@ h1 {
   .section {
     padding-block: 56px;
   }
-  .section-heading-row {
-    margin-bottom: 28px;
-  }
-  .case-study {
-    padding: 24px 20px;
-    gap: 28px;
-    border-radius: 8px;
-  }
-  .case-overview h3 {
-    font-size: 32px;
-    margin-top: 16px;
-  }
-  .case-scope {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-  .case-scope ul {
-    gap: 8px 20px;
-  }
   .capabilities {
     grid-template-columns: 1fr;
-  }
-  .workflow {
-    padding: 16px;
-  }
-  .workflow-heading {
-    flex-wrap: wrap;
-    gap: 4px 12px;
-  }
-  .workflow-providers div {
-    padding: 10px;
-    font-size: 13px;
-  }
-  .workflow-connection span {
-    font-size: 9px;
   }
   .contact-email {
     gap: 8px;

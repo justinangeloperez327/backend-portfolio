@@ -14,66 +14,31 @@ export const profile = {
 export const caseStudies = [
   {
     id: "skyunitech",
-    company: "SKYUNITECH",
-    domain: "Travel",
-    title: "SKYUNITECH",
-    summary: "Travel agency API integrations.",
-    problem:
-      "A travel platform connecting external travel agency services through API integrations.",
-    contribution:
-      "Integrated travel agency APIs, including Hotelbeds, Expedia, Travelport, and Nirvana, into SKYUNITECH.",
-    outcome: "Delivered travel API integrations with approved certifications.",
-    tags: ["API integrations", "Travel services"],
-    scope: ["Hotelbeds", "Expedia", "Travelport", "Nirvana"],
-  },
-  {
-    id: "redhq",
-    company: "REDHQ",
-    domain: "Real estate",
-    title: "REDHQ",
-    summary: "Property and business management for real estate companies.",
-    problem:
-      "A platform where real estate companies manage property listings, order advertising materials, and handle accounting and dashboards.",
-    contribution:
-      "Built property listing management, ordering for materials used in property advertising, accounting functionality, and the application dashboard.",
-    outcome:
-      "Delivered functionality supporting property advertising and business administration.",
-    tags: ["PHP", "Laravel", "MySQL", "JavaScript"],
-    scope: [
-      "Property listings",
-      "Advertising material orders",
-      "Accounting",
-      "Dashboard",
+    name: "SKYUNITECH",
+    description:
+      "Integrated Hotelbeds, Expedia, Travelport, and Nirvana travel APIs, with approved certifications, into the SKYUNITECH platform.",
+    techStack: [
+      "Hotelbeds API",
+      "Expedia API",
+      "Travelport API",
+      "Nirvana API",
     ],
   },
   {
+    id: "redhq",
+    name: "REDHQ",
+    description:
+      "A platform for real estate companies to manage property listings, order advertising materials, handle accounting, and use an application dashboard.",
+    techStack: ["PHP", "Laravel", "MySQL", "JavaScript"],
+  },
+  {
     id: "bghmc",
-    company: "BGHMC",
-    domain: "Healthcare",
-    title: "BGHMC",
-    summary: "Procurement, inventory, and queuing systems.",
-    problem:
-      "Hospital systems for managing procurement, tracking inventory, and organizing patient queues.",
-    contribution:
-      "Created the procurement, inventory management, and queuing systems for BGHMC.",
-    outcome:
-      "Delivered three systems supporting day-to-day hospital operations.",
-    tags: ["Business applications", "Hospital operations"],
-    scope: ["Procurement", "Inventory management", "Patient queuing"],
+    name: "BGHMC",
+    description:
+      "Created procurement, inventory management, and patient queuing systems for hospital operations.",
+    techStack: [],
   },
 ] as const;
-
-export const integrationWorkflow = {
-  label: "Travel service integration",
-  application: "SKYUNITECH",
-  applicationNote: "Travel platform",
-  connection: "Third-party API integrations",
-  contribution:
-    "My contribution: travel API integrations with approved certifications.",
-  providers: ["Hotelbeds", "Expedia", "Travelport", "Nirvana"],
-  caption:
-    "Conceptual workflow based on professional experience. Shows service relationships, not internal architecture or a live system.",
-} as const;
 
 export const skillGroups = [
   {

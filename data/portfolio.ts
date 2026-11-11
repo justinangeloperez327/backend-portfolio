@@ -11,35 +11,105 @@ export const profile = {
     "Software developer with over six years of professional development experience building business applications across real estate, travel, and healthcare. Experienced in PHP, Laravel, MySQL, third-party API integration, and dashboard development. Work includes property listings, order management, accounting, procurement, inventory, and queuing systems. Combines development experience with practical knowledge of operational workflows, project documentation, and stakeholder coordination.",
 } as const;
 
-export const focusAreas = [
+export const caseStudies = [
   {
-    number: "01",
-    title: "Real estate platforms",
-    description:
-      "Property listings, order management, accounting workflows, and application dashboards developed for an Australian real estate business.",
-    tags: ["PHP", "Laravel", "MySQL", "Dashboards"],
+    id: "redhq",
+    company: "REDHQ",
+    domain: "Real estate",
+    title: "The software behind property operations.",
+    problem:
+      "Support an Australian real estate business with property listings, order management, accounting functionality, and application dashboards.",
+    contribution:
+      "Developed and maintained web applications, built listing, order, and accounting features, and took responsibility for the application dashboard. Integrated third-party services where required.",
+    outcome:
+      "Delivered application functionality supporting the business’s property and administrative workflows.",
+    tags: ["PHP", "Laravel", "MySQL", "JavaScript"],
+    scope: [
+      "Property listings",
+      "Order management",
+      "Accounting",
+      "Dashboards",
+    ],
   },
   {
-    number: "02",
-    title: "Travel service integrations",
-    description:
-      "Travel agency application features connecting external travel services, including Hotelbeds, Expedia, Travelport, and Nirvana APIs.",
-    tags: ["Third-party APIs", "Travel platforms", "Integrations"],
+    id: "skyunitech",
+    company: "SKYUNITECH",
+    domain: "Travel",
+    title: "Connecting travel services to one application.",
+    problem:
+      "Connect external travel services with a travel agency web application.",
+    contribution:
+      "Developed application features and integrated Hotelbeds, Expedia, Travelport, and Nirvana APIs to connect external travel services with the application.",
+    outcome:
+      "Connected external provider services with travel application functionality.",
+    tags: ["Third-party APIs", "Travel integrations"],
+    scope: ["Hotelbeds", "Expedia", "Travelport", "Nirvana"],
   },
   {
-    number: "03",
-    title: "Hospital operations",
-    description:
-      "Software supporting procurement, inventory management, and patient queuing workflows, alongside technical support for hospital staff.",
-    tags: ["Procurement", "Inventory", "Queuing"],
+    id: "bghmc",
+    company: "BGHMC",
+    domain: "Healthcare",
+    title: "Supporting everyday hospital operations.",
+    problem:
+      "Support hospital procurement, inventory management, and patient queuing workflows with software.",
+    contribution:
+      "Contributed to procurement, inventory, and queuing systems. Also provided hardware and software support, troubleshooting desktops and laptops used by hospital staff.",
+    outcome:
+      "Contributed software functionality and technical support for hospital operations.",
+    tags: ["Business applications", "Technical support"],
+    scope: ["Procurement", "Inventory", "Patient queuing"],
   },
 ] as const;
 
+export const integrationWorkflow = {
+  label: "Travel service integration",
+  application: "Travel agency application",
+  applicationNote: "Application features developed at SKYUNITECH",
+  connection: "Third-party API integrations",
+  contribution:
+    "My contribution: application features and provider integrations.",
+  providers: ["Hotelbeds", "Expedia", "Travelport", "Nirvana"],
+  caption:
+    "Conceptual workflow based on professional experience. Shows service relationships, not internal architecture or a live system.",
+} as const;
+
 export const skillGroups = [
-  { title: "Backend", skills: ["PHP", "Laravel", "Node.js"] },
-  { title: "Databases", skills: ["MySQL", "Microsoft SQL Server", "SQL"] },
-  { title: "Frontend", skills: ["JavaScript", "HTML", "CSS", "React.js", "Next.js", "Vue.js"] },
-  { title: "Development tools", skills: ["Git", "GitHub"] },
+  {
+    title: "Backend development",
+    skills: ["PHP", "Laravel", "Node.js"],
+    href: "#redhq",
+    evidence: "Real estate applications",
+  },
+  {
+    title: "Relational databases",
+    skills: ["MySQL", "Microsoft SQL Server", "SQL"],
+    href: "#redhq",
+    evidence: "Business application development",
+  },
+  {
+    title: "Service integrations",
+    skills: [
+      "Third-party APIs",
+      "Hotelbeds",
+      "Expedia",
+      "Travelport",
+      "Nirvana",
+    ],
+    href: "#skyunitech",
+    evidence: "Travel service integrations",
+  },
+  {
+    title: "Frontend support",
+    skills: ["JavaScript", "HTML", "CSS", "React.js", "Next.js", "Vue.js"],
+    href: "#redhq",
+    evidence: "Application interfaces and dashboards",
+  },
+  {
+    title: "Development tools",
+    skills: ["Git", "GitHub"],
+    href: "https://github.com/justinangeloperez327",
+    evidence: "Browse repositories",
+  },
 ] as const;
 
 export const experience = [
@@ -102,4 +172,15 @@ export const education = {
   university: "University of Baguio",
   location: "Baguio City, Philippines",
   year: "2018",
+} as const;
+
+export const introduction = {
+  headline: "I build backend systems for",
+  emphasis: "business operations.",
+  description:
+    "PHP, Laravel, and relational databases. Building business applications and connecting services across real estate, travel, and healthcare.",
+  about: [
+    "I’m Justin, a software developer based in Abu Dhabi. My work spans property platforms, travel services, and hospital operations — systems shaped by the people who use them every day.",
+    "I bring development experience alongside practical knowledge of operational workflows, project documentation, and stakeholder coordination. That context helps me translate business requirements into software.",
+  ],
 } as const;

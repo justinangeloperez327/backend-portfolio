@@ -50,7 +50,6 @@ export default function Home() {
           <div className="hero-intro">
             <p className="hero-role">{profile.title}</p>
             <h1>{profile.name}</h1>
-            <p className="hero-description">{introduction.description}</p>
             <div className="hero-actions">
               <Button asChild size="lg">
                 <a href="#projects">

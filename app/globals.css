@@ -219,12 +219,6 @@ h1 {
   margin: 24px 0;
   max-width: 780px;
 }
-.hero-description {
-  max-width: 520px;
-  color: var(--muted-foreground);
-  font-size: 19px;
-  line-height: 1.7;
-}
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -673,10 +667,7 @@ h1 {
     font-size: 42px;
     line-height: 1.12;
   }
-  .hero-description {
-    font-size: 18px;
-  }
-  .hero-actions {
+    .hero-actions {
     gap: 10px;
   }
   .hero-actions [data-slot="button"] {

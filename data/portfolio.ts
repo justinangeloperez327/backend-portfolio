@@ -16,27 +16,22 @@ export const caseStudies = [
     id: "skyunitech",
     name: "SKYUNITECH",
     description:
-      "Integrated Hotelbeds, Expedia, Travelport, and Nirvana travel APIs, with approved certifications, into the SKYUNITECH platform.",
-    techStack: [
-      "Hotelbeds API",
-      "Expedia API",
-      "Travelport API",
-      "Nirvana API",
-    ],
+      "Integrated Hotelbeds, Expedia, Travelport, and Nirvana APIs into SKYUNITECH, with approved integration certifications.",
+    techStack: ["Laravel", "PHP", "MySQL", "MongoDB", "Vue.js", "JavaScript"],
   },
   {
     id: "redhq",
     name: "REDHQ",
     description:
-      "A platform for real estate companies to manage property listings, order advertising materials, handle accounting, and use an application dashboard.",
-    techStack: ["PHP", "Laravel", "MySQL", "JavaScript"],
+      "Developed property listing management, advertising material ordering, accounting functionality, and the application dashboard for real estate companies.",
+    techStack: ["Laravel", "PHP", "MySQL", "Vue.js", "React", "JavaScript"],
   },
   {
     id: "bghmc",
     name: "BGHMC",
     description:
       "Created procurement, inventory management, and patient queuing systems for hospital operations.",
-    techStack: [],
+    techStack: ["Laravel", "PHP", "Microsoft SQL Server", "JavaScript"],
   },
 ] as const;
 
@@ -48,8 +43,8 @@ export const skillGroups = [
     evidence: "Real estate applications",
   },
   {
-    title: "Relational databases",
-    skills: ["MySQL", "Microsoft SQL Server", "SQL"],
+    title: "Databases",
+    skills: ["MySQL", "Microsoft SQL Server", "MongoDB", "SQL"],
     href: "#redhq",
     evidence: "Business application development",
   },
@@ -73,7 +68,7 @@ export const skillGroups = [
   },
   {
     title: "Development tools",
-    skills: ["Git", "GitHub"],
+    skills: ["Git", "GitHub", "Bitbucket", "Jira"],
     href: "https://github.com/justinangeloperez327",
     evidence: "Browse repositories",
   },

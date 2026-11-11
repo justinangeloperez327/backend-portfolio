@@ -208,19 +208,21 @@ a:hover {
   color: var(--muted-foreground);
 }
 .hero {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  align-items: center;
-  gap: 48px;
-  padding-top: 88px;
+  padding-block: 96px 72px;
+  border-bottom: 1px solid var(--border);
+}
+.hero-intro {
+  max-width: 780px;
+}
+.hero-role {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  color: var(--primary);
 }
 h1 {
   font-size: clamp(42px, 4.5vw, 66px);
   margin: 24px 0;
-  max-width: 660px;
-}
-h1 span {
-  color: var(--primary);
+  max-width: 780px;
 }
 .hero-description {
   max-width: 520px;
@@ -241,25 +243,6 @@ h1 span {
 }
 .hero-actions [data-slot="button"]:first-child:hover {
   color: var(--background);
-}
-.location {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--muted-foreground);
-  font-size: 14px;
-  margin-top: 28px;
-}
-.hero-footnote {
-  grid-column: 1/-1;
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  border-top: 1px solid var(--border);
-  padding: 22px 0;
-  margin-top: 24px;
-  color: var(--muted-foreground);
-  font-size: 14px;
 }
 .workflow {
   margin: 0;
@@ -621,9 +604,6 @@ h1 span {
   .wordmark > span:last-child {
     display: none;
   }
-  .hero {
-    gap: 32px;
-  }
   .workflow {
     padding: 24px;
   }
@@ -652,9 +632,7 @@ h1 span {
     margin-left: auto;
   }
   .hero {
-    grid-template-columns: 1fr;
-    padding-top: 56px;
-    gap: 40px;
+    padding-block: 72px 56px;
   }
   .hero-intro {
     max-width: 650px;
@@ -665,9 +643,6 @@ h1 span {
   .workflow {
     max-width: 600px;
     width: 100%;
-  }
-  .hero-footnote {
-    margin-top: 0;
   }
   .experience-layout,
   .about-layout {
@@ -702,12 +677,7 @@ h1 span {
     display: none;
   }
   .hero {
-    padding-top: 40px;
-    gap: 32px;
-  }
-  .hero .eyebrow {
-    font-size: 10px;
-    letter-spacing: 0.05em;
+    padding-block: 56px 48px;
   }
   h1 {
     font-size: 42px;
@@ -725,10 +695,6 @@ h1 span {
   }
   .workflow {
     padding: 20px;
-  }
-  .hero-footnote {
-    flex-direction: column;
-    gap: 6px;
   }
   .section {
     padding-block: 64px;

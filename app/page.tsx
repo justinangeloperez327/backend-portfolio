@@ -73,10 +73,7 @@ export default function Home() {
         <section id="about">
           <div className="section section-tinted">
             <div className="container about-layout">
-              <SectionTitle
-                label="About"
-                title="Understanding the workflow comes first."
-              />
+              <SectionTitle label="About" title="About me." />
               <div className="about-copy">
                 {introduction.about.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
@@ -99,7 +96,7 @@ export default function Home() {
               <SectionTitle
                 label="Experience"
                 nested
-                title="Development, with operational perspective."
+                title="Professional experience."
                 description="A career spanning business software, technical support, and project coordination."
               />
               <ol className="timeline">
@@ -142,7 +139,7 @@ export default function Home() {
             <SectionTitle
               label="Technical capabilities"
               nested
-              title="A practical toolkit. Connected to the work."
+              title="Technical capabilities."
               description="A foundation in server-side development, with the tools to support the complete application."
             />
             <div className="capabilities">
@@ -163,8 +160,8 @@ export default function Home() {
           <div className="section-heading-row">
             <SectionTitle
               label="Projects"
-              title="Built around the way people work."
-              description="Contributions to business applications across three industries."
+              title="Selected projects."
+              description="Travel integrations, real estate operations, and hospital systems."
             />
             <span className="section-aside">
               Real estate · Travel · Healthcare
@@ -175,9 +172,10 @@ export default function Home() {
               <article id={study.id} key={study.id} className="case-study">
                 <div className="case-overview">
                   <p className="eyebrow">
-                    {study.company} <span>/ {study.domain}</span>
+                    {study.domain} <span>/ Professional project</span>
                   </p>
                   <h3>{study.title}</h3>
+                  <p className="project-summary">{study.summary}</p>
                   <div className="tag-list">
                     {study.tags.map((tag) => (
                       <Badge variant="outline" key={tag}>
@@ -185,19 +183,18 @@ export default function Home() {
                       </Badge>
                     ))}
                   </div>
-                  <p className="professional-label">Professional experience</p>
                 </div>
                 <div className="case-details">
                   <div>
-                    <h4>Business need</h4>
+                    <h4>The project</h4>
                     <p>{study.problem}</p>
                   </div>
                   <div>
-                    <h4>My contribution</h4>
+                    <h4>My work</h4>
                     <p>{study.contribution}</p>
                   </div>
                   <div className="case-outcome">
-                    <h4>Delivered work</h4>
+                    <h4>Delivery</h4>
                     <p>{study.outcome}</p>
                   </div>
                   {study.id === "skyunitech" && <Workflow />}

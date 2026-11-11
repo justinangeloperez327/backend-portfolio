@@ -12,7 +12,7 @@ export function Workflow() {
         <span className="eyebrow">System relationships</span>
         <span className="technical-label">Conceptual</span>
       </div>
-      <h2 id="workflow-title">{workflow.label}</h2>
+      <h4 id="workflow-title">{workflow.label}</h4>
       <div className="workflow-application">
         <span className="node-label">Application</span>
         <strong>{workflow.application}</strong>

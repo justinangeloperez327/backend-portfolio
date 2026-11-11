@@ -13,61 +13,63 @@ export const profile = {
 
 export const caseStudies = [
   {
-    id: "redhq",
-    company: "REDHQ",
-    domain: "Real estate",
-    title: "The software behind property operations.",
-    problem:
-      "Support an Australian real estate business with property listings, order management, accounting functionality, and application dashboards.",
-    contribution:
-      "Developed and maintained web applications, built listing, order, and accounting features, and took responsibility for the application dashboard. Integrated third-party services where required.",
-    outcome:
-      "Delivered application functionality supporting the business’s property and administrative workflows.",
-    tags: ["PHP", "Laravel", "MySQL", "JavaScript"],
-    scope: [
-      "Property listings",
-      "Order management",
-      "Accounting",
-      "Dashboards",
-    ],
-  },
-  {
     id: "skyunitech",
     company: "SKYUNITECH",
     domain: "Travel",
-    title: "Connecting travel services to one application.",
+    title: "SKYUNITECH",
+    summary: "Travel agency API integrations.",
     problem:
-      "Connect external travel services with a travel agency web application.",
+      "A travel platform connecting external travel agency services through API integrations.",
     contribution:
-      "Developed application features and integrated Hotelbeds, Expedia, Travelport, and Nirvana APIs to connect external travel services with the application.",
-    outcome:
-      "Connected external provider services with travel application functionality.",
-    tags: ["Third-party APIs", "Travel integrations"],
+      "Integrated travel agency APIs, including Hotelbeds, Expedia, Travelport, and Nirvana, into SKYUNITECH.",
+    outcome: "Delivered travel API integrations with approved certifications.",
+    tags: ["API integrations", "Travel services"],
     scope: ["Hotelbeds", "Expedia", "Travelport", "Nirvana"],
+  },
+  {
+    id: "redhq",
+    company: "REDHQ",
+    domain: "Real estate",
+    title: "REDHQ",
+    summary: "Property and business management for real estate companies.",
+    problem:
+      "A platform where real estate companies manage property listings, order advertising materials, and handle accounting and dashboards.",
+    contribution:
+      "Built property listing management, ordering for materials used in property advertising, accounting functionality, and the application dashboard.",
+    outcome:
+      "Delivered functionality supporting property advertising and business administration.",
+    tags: ["PHP", "Laravel", "MySQL", "JavaScript"],
+    scope: [
+      "Property listings",
+      "Advertising material orders",
+      "Accounting",
+      "Dashboard",
+    ],
   },
   {
     id: "bghmc",
     company: "BGHMC",
     domain: "Healthcare",
-    title: "Supporting everyday hospital operations.",
+    title: "BGHMC",
+    summary: "Procurement, inventory, and queuing systems.",
     problem:
-      "Support hospital procurement, inventory management, and patient queuing workflows with software.",
+      "Hospital systems for managing procurement, tracking inventory, and organizing patient queues.",
     contribution:
-      "Contributed to procurement, inventory, and queuing systems. Also provided hardware and software support, troubleshooting desktops and laptops used by hospital staff.",
+      "Created the procurement, inventory management, and queuing systems for BGHMC.",
     outcome:
-      "Contributed software functionality and technical support for hospital operations.",
-    tags: ["Business applications", "Technical support"],
-    scope: ["Procurement", "Inventory", "Patient queuing"],
+      "Delivered three systems supporting day-to-day hospital operations.",
+    tags: ["Business applications", "Hospital operations"],
+    scope: ["Procurement", "Inventory management", "Patient queuing"],
   },
 ] as const;
 
 export const integrationWorkflow = {
   label: "Travel service integration",
-  application: "Travel agency application",
-  applicationNote: "Application features developed at SKYUNITECH",
+  application: "SKYUNITECH",
+  applicationNote: "Travel platform",
   connection: "Third-party API integrations",
   contribution:
-    "My contribution: application features and provider integrations.",
+    "My contribution: travel API integrations with approved certifications.",
   providers: ["Hotelbeds", "Expedia", "Travelport", "Nirvana"],
   caption:
     "Conceptual workflow based on professional experience. Shows service relationships, not internal architecture or a live system.",
@@ -130,7 +132,7 @@ export const experience = [
     period: "Oct 2025 — Jan 2026",
     highlights: [
       "Developed features for a travel agency web application.",
-      "Integrated Hotelbeds, Expedia, Travelport, and Nirvana APIs to connect external travel services with the application.",
+      "Integrated Hotelbeds, Expedia, Travelport, and Nirvana APIs, with approved certifications, into SKYUNITECH.",
     ],
   },
   {
@@ -140,7 +142,7 @@ export const experience = [
     period: "Feb 2021 — Jun 2025",
     highlights: [
       "Developed web applications for an Australian real estate business using PHP, Laravel, MySQL, JavaScript, HTML, and CSS.",
-      "Built property listing, order management, and accounting functionality to support business operations.",
+      "Built property listing management, advertising material ordering, and accounting functionality for real estate companies.",
       "Developed and maintained the application dashboard.",
       "Integrated third-party APIs to connect external services with application functionality.",
     ],
@@ -160,7 +162,7 @@ export const experience = [
     location: "",
     period: "Dec 2018 — Feb 2020",
     highlights: [
-      "Contributed to the development of procurement, inventory management, and queuing systems supporting hospital operations.",
+      "Created procurement, inventory management, and queuing systems supporting hospital operations.",
       "Troubleshot desktop computers and laptops, providing hardware and software support to staff.",
     ],
   },

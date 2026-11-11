@@ -4,7 +4,6 @@ import {
   ArrowUpRight,
   Github,
   Mail,
-  MapPin,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -47,12 +46,8 @@ export default function Home() {
       <main id="main">
         <section id="top" className="hero container">
           <div className="hero-intro">
-            <p className="eyebrow">
-              {profile.name} / {profile.title}
-            </p>
-            <h1>
-              {introduction.headline} <span>{introduction.emphasis}</span>
-            </h1>
+            <p className="hero-role">{profile.title}</p>
+            <h1>{profile.name}</h1>
             <p className="hero-description">{introduction.description}</p>
             <div className="hero-actions">
               <Button asChild size="lg">
@@ -72,15 +67,6 @@ export default function Home() {
                 </a>
               </Button>
             </div>
-            <p className="location">
-              <MapPin size={15} aria-hidden="true" />
-              {profile.location}
-            </p>
-          </div>
-          <Workflow />
-          <div className="hero-footnote">
-            <span>Business context. Practical software.</span>
-            <span className="technical-label">PHP / Laravel / MySQL</span>
           </div>
         </section>
         <section id="work" className="section container">
@@ -124,6 +110,7 @@ export default function Home() {
                     <h4>Delivered work</h4>
                     <p>{study.outcome}</p>
                   </div>
+                  {study.id === "skyunitech" && <Workflow />}
                 </div>
                 <div className="case-scope">
                   <span className="technical-label">Application scope</span>

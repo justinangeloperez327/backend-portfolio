@@ -22,15 +22,17 @@ function SectionTitle({
   label,
   title,
   description,
+  nested = false,
 }: {
   label: string;
   title: string;
   description?: string;
+  nested?: boolean;
 }) {
   return (
     <div className="section-title">
       <p className="eyebrow">{label}</p>
-      <h2>{title}</h2>
+      {nested ? <h3>{title}</h3> : <h2>{title}</h2>}
       {description && <p>{description}</p>}
     </div>
   );
@@ -51,8 +53,8 @@ export default function Home() {
             <p className="hero-description">{introduction.description}</p>
             <div className="hero-actions">
               <Button asChild size="lg">
-                <a href="#work">
-                  View selected work <ArrowDownRight aria-hidden="true" />
+                <a href="#projects">
+                  View projects <ArrowDownRight aria-hidden="true" />
                 </a>
               </Button>
               <Button asChild size="lg" variant="outline">
@@ -69,10 +71,99 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="work" className="section container">
+        <section id="about">
+          <div className="section section-tinted">
+            <div className="container about-layout">
+              <SectionTitle
+                label="About"
+                title="Understanding the workflow comes first."
+              />
+              <div className="about-copy">
+                {introduction.about.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+                <div className="education">
+                  <p className="eyebrow">Education</p>
+                  <h3>{education.degree}</h3>
+                  <p>{education.major}</p>
+                  <p>
+                    {education.university} · {education.year}
+                    <br />
+                    {education.location}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="experience" className="section section-tinted">
+            <div className="container experience-layout">
+              <SectionTitle
+                label="Experience"
+                nested
+                title="Development, with operational perspective."
+                description="A career spanning business software, technical support, and project coordination."
+              />
+              <ol className="timeline">
+                {experience.map((job, index) => (
+                  <li key={`${job.company}-${job.period}`}>
+                    <p className="job-period">
+                      {job.period}
+                      {index === 0 && <span>Current role</span>}
+                    </p>
+                    <h4>{job.role}</h4>
+                    <p className="job-company">
+                      {job.company}
+                      {job.location && <span> · {job.location}</span>}
+                    </p>
+                    <p className="job-summary">{job.highlights[0]}</p>
+                    {job.company === "REDHQ" && (
+                      <a className="text-link" href="#redhq">
+                        Explore the work{" "}
+                        <ArrowUpRight size={15} aria-hidden="true" />
+                      </a>
+                    )}
+                    {job.company === "SKYUNITECH" && (
+                      <a className="text-link" href="#skyunitech">
+                        Explore the integrations{" "}
+                        <ArrowUpRight size={15} aria-hidden="true" />
+                      </a>
+                    )}
+                    {job.company === "BGHMC" && (
+                      <a className="text-link" href="#bghmc">
+                        Explore the systems{" "}
+                        <ArrowUpRight size={15} aria-hidden="true" />
+                      </a>
+                    )}
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+          <div id="capabilities" className="section container">
+            <SectionTitle
+              label="Technical capabilities"
+              nested
+              title="A practical toolkit. Connected to the work."
+              description="A foundation in server-side development, with the tools to support the complete application."
+            />
+            <div className="capabilities">
+              {skillGroups.map((group) => (
+                <article key={group.title} className="capability">
+                  <h4>{group.title}</h4>
+                  <p>{group.skills.join(" · ")}</p>
+                  <a className="text-link" href={group.href}>
+                    {group.evidence}
+                    <ArrowUpRight size={15} aria-hidden="true" />
+                  </a>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+        <section id="projects" className="section container">
           <div className="section-heading-row">
             <SectionTitle
-              label="Selected professional work"
+              label="Projects"
               title="Built around the way people work."
               description="Contributions to business applications across three industries."
             />
@@ -124,93 +215,8 @@ export default function Home() {
             ))}
           </div>
         </section>
-        <section id="experience" className="section section-tinted">
-          <div className="container experience-layout">
-            <SectionTitle
-              label="Experience"
-              title="Development, with operational perspective."
-              description="A career spanning business software, technical support, and project coordination."
-            />
-            <ol className="timeline">
-              {experience.map((job, index) => (
-                <li key={`${job.company}-${job.period}`}>
-                  <p className="job-period">
-                    {job.period}
-                    {index === 0 && <span>Current role</span>}
-                  </p>
-                  <h3>{job.role}</h3>
-                  <p className="job-company">
-                    {job.company}
-                    {job.location && <span> · {job.location}</span>}
-                  </p>
-                  <p className="job-summary">{job.highlights[0]}</p>
-                  {job.company === "REDHQ" && (
-                    <a className="text-link" href="#redhq">
-                      Explore the work{" "}
-                      <ArrowUpRight size={15} aria-hidden="true" />
-                    </a>
-                  )}
-                  {job.company === "SKYUNITECH" && (
-                    <a className="text-link" href="#skyunitech">
-                      Explore the integrations{" "}
-                      <ArrowUpRight size={15} aria-hidden="true" />
-                    </a>
-                  )}
-                  {job.company === "BGHMC" && (
-                    <a className="text-link" href="#bghmc">
-                      Explore the systems{" "}
-                      <ArrowUpRight size={15} aria-hidden="true" />
-                    </a>
-                  )}
-                </li>
-              ))}
-            </ol>
-          </div>
-        </section>
-        <section id="capabilities" className="section container">
-          <SectionTitle
-            label="Technical capabilities"
-            title="A practical toolkit. Connected to the work."
-            description="A foundation in server-side development, with the tools to support the complete application."
-          />
-          <div className="capabilities">
-            {skillGroups.map((group) => (
-              <article key={group.title} className="capability">
-                <h3>{group.title}</h3>
-                <p>{group.skills.join(" · ")}</p>
-                <a className="text-link" href={group.href}>
-                  {group.evidence}
-                  <ArrowUpRight size={15} aria-hidden="true" />
-                </a>
-              </article>
-            ))}
-          </div>
-        </section>
-        <section id="about" className="section section-tinted">
-          <div className="container about-layout">
-            <SectionTitle
-              label="About"
-              title="Understanding the workflow comes first."
-            />
-            <div className="about-copy">
-              {introduction.about.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-              <div className="education">
-                <p className="eyebrow">Education</p>
-                <h3>{education.degree}</h3>
-                <p>{education.major}</p>
-                <p>
-                  {education.university} · {education.year}
-                  <br />
-                  {education.location}
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
         <section id="contact" className="section container contact">
-          <p className="eyebrow">Get in touch</p>
+          <p className="eyebrow">Contact</p>
           <h2>
             Let’s talk about the
             <br />

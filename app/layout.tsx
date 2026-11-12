@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
-
-import { Space_Grotesk, Source_Sans_3, IBM_Plex_Mono } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 
 import "./globals.css";
 
@@ -9,15 +8,9 @@ const heading = Space_Grotesk({
   variable: "--font-heading",
   display: "swap",
 });
-const body = Source_Sans_3({
+const body = Inter({
   subsets: ["latin"],
   variable: "--font-body",
-  display: "swap",
-});
-const utility = IBM_Plex_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-utility",
   display: "swap",
 });
 
@@ -38,8 +31,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Justin Angelo Perez" }],
   openGraph: {
     title: "Justin Angelo Perez | Backend Engineer",
-    description:
-      "Building reliable software for real-world business operations.",
+    description: "Building reliable software for real-world business operations.",
     type: "website",
     locale: "en_US",
   },
@@ -47,7 +39,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#F5F7FA",
+  themeColor: "#090C10",
 };
 
 export default function RootLayout({
@@ -55,9 +47,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body
-        className={`${heading.variable} ${body.variable} ${utility.variable} min-h-screen`}
-      >
+      <body className={heading.variable + " " + body.variable + " min-h-screen"}>
         {children}
       </body>
     </html>

@@ -1,29 +1,36 @@
 # Backend Portfolio
 
-A responsive portfolio for **Justin Angelo Perez**, a backend engineer focused on PHP, Laravel, relational databases, and business application development.
+The personal portfolio of **Justin Angelo Perez**, a backend engineer focused on Laravel, PHP, API integrations, databases, and software for day-to-day business operations.
 
-## Tech stack
+## Design
 
-- **Next.js 16** with the App Router and TypeScript
-- **React 19**
-- **Tailwind CSS 4**
-- **shadcn/ui** components (new-york style)
-- **Lucide** icons
+- Near-black charcoal (`#090C10`) with restrained emerald (`#34D399`) accents
+- Space Grotesk headings and Inter body typography
+- Four navigation sections: About, Experience, Projects, Contact
+- Minimal project cards showing names, implemented functionality, and confirmed technology stacks
+- GSAP hero and ScrollTrigger reveal animations that run once and respect reduced-motion settings
 
-The application is a static, content-driven personal portfolio. No database, API keys, or external services are required.
+The site deliberately avoids code snippets, architecture diagrams, and decorative visualizations. Existing project and career content is maintained in `data/portfolio.ts`.
 
-## Getting started
+## Stack
 
-Use **Node.js 24** (`nvm use`).
+- Next.js 16 App Router, React 19, TypeScript
+- Tailwind CSS 4 and shadcn/ui primitives
+- GSAP 3 + ScrollTrigger
+- Lucide icons
+
+## Development
+
+Use Node.js 24 (`.nvmrc`).
 
 ```bash
 npm ci
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Visit [http://localhost:3000](http://localhost:3000).
 
-## Checks
+## Validation
 
 ```bash
 npm run lint
@@ -31,37 +38,25 @@ npm run typecheck
 npm run build
 ```
 
+GitHub Actions runs these checks on pushes to `main` and pull requests.
+
 ## Project structure
 
 ```text
 app/
-  globals.css        # Theme tokens, Tailwind styles, visual utilities
-  layout.tsx          # Root layout and SEO metadata
-  page.tsx            # Portfolio landing page
+  globals.css                 # Theme, layout, and responsive styles
+  layout.tsx                  # Fonts and SEO metadata
+  page.tsx                    # Four-section landing page
 components/
-  ui/                 # shadcn/ui primitives
+  portfolio/header.tsx        # Responsive navigation and active-section indicator
+  portfolio/motion.tsx        # GSAP animations with cleanup and reduced-motion support
+  ui/                         # Shared button and other UI primitives
 data/
-  portfolio.ts        # Single source of truth for resume information
-lib/
-  utils.ts            # Tailwind class merging helper
-public/
-  favicon.svg
+  portfolio.ts                # Career history, projects, skills, and contact details
 ```
 
-## Editing content
-
-Update `data/portfolio.ts` to change the professional summary, case studies, conceptual integration workflow, technical skills, employment history, and education. Edit `app/page.tsx` to change page layout or sections.
-
-The shadcn/ui CLI is configured via `components.json`. You can add components with:
-
-```bash
-npx shadcn@latest add <component-name>
-```
+To update project copy, confirmed tech stacks, employment, or contact details, edit `data/portfolio.ts`. Keep existing projects unless explicitly removing them.
 
 ## Deployment
 
-Deploy using a standard Next.js host such as Vercel, or run `npm run build && npm run start` on your own Node.js server. No automatic deployment workflow is configured.
-
-## Content
-
-Career details are based on the supplied resume. Case studies describe verified contributions; the travel diagram is explicitly conceptual, and no fabricated project metrics or confidential client data are included.
+Deploy manually to any supported Next.js host (including Vercel). No automatic Vercel deployment workflow is configured.

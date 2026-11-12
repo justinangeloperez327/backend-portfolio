@@ -6,8 +6,8 @@ import {
   Mail,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Header } from "@/components/portfolio/header";
+import { PortfolioMotion } from "@/components/portfolio/motion";
 import {
   caseStudies,
   education,
@@ -17,26 +17,6 @@ import {
   skillGroups,
 } from "@/data/portfolio";
 
-function SectionTitle({
-  label,
-  title,
-  description,
-  nested = false,
-}: {
-  label: string;
-  title: string;
-  description?: string;
-  nested?: boolean;
-}) {
-  return (
-    <div className="section-title">
-      <p className="eyebrow">{label}</p>
-      {nested ? <h3>{title}</h3> : <h2>{title}</h2>}
-      {description && <p>{description}</p>}
-    </div>
-  );
-}
-
 export default function Home() {
   return (
     <>
@@ -44,185 +24,157 @@ export default function Home() {
         Skip to content
       </a>
       <Header />
+      <PortfolioMotion />
       <main id="main">
-        <section id="top" className="hero container">
+        <section id="top" className="hero container" aria-labelledby="hero-title">
           <div className="hero-intro">
-            <p className="hero-role">{profile.title}</p>
-            <h1>{profile.name}</h1>
-            <div className="hero-actions">
+            <p className="hero-role" data-animate="hero">{profile.title}</p>
+            <h1 id="hero-title" data-animate="hero">{profile.name}</h1>
+            <p className="hero-statement" data-animate="hero">
+              I build the systems behind everyday business operations.
+            </p>
+            <p className="hero-summary" data-animate="hero">
+              From travel supplier integrations to real estate platforms and
+              hospital workflows, I develop practical backend-driven software.
+            </p>
+            <div className="hero-actions" data-animate="hero">
               <Button asChild size="lg">
                 <a href="#projects">
-                  View projects <ArrowDownRight aria-hidden="true" />
+                  View Projects <ArrowDownRight aria-hidden="true" />
                 </a>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <a
-                  href={profile.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="View GitHub profile (opens in a new tab)"
-                >
-                  <Github aria-hidden="true" /> GitHub{" "}
-                  <ArrowUpRight aria-hidden="true" />
+                <a href="#contact">
+                  Contact Me <ArrowUpRight aria-hidden="true" />
                 </a>
               </Button>
             </div>
+            <p className="hero-location" data-animate="hero">
+              {profile.location} <span aria-hidden="true">/</span> {profile.specialty}
+            </p>
           </div>
         </section>
-        <section id="about">
-          <div className="section section-tinted">
-            <div className="container about-layout">
-              <SectionTitle label="About" title="About me." />
-              <div className="about-copy">
+
+        <section id="about" className="section section-band" aria-labelledby="about-heading">
+          <div className="container section-split">
+            <div className="section-intro" data-animate="reveal">
+              <p className="section-index">01 / About</p>
+              <h2 id="about-heading">About</h2>
+            </div>
+            <div className="about-content">
+              <div className="about-copy" data-animate="reveal">
                 {introduction.about.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
-                <div className="education">
-                  <p className="eyebrow">Education</p>
-                  <h3>{education.degree}</h3>
-                  <p>{education.major}</p>
-                  <p>
-                    {education.university} · {education.year}
-                    <br />
-                    {education.location}
-                  </p>
+              </div>
+              <div className="education" data-animate="reveal">
+                <p className="section-detail">Education</p>
+                <h3>{education.degree}</h3>
+                <p>{education.major}</p>
+                <p>{education.university} · {education.year} · {education.location}</p>
+              </div>
+              <div className="skills-block" data-animate="reveal">
+                <h3>Technical focus</h3>
+                <div className="capabilities">
+                  {skillGroups.map((group) => (
+                    <div key={group.title} className="capability">
+                      <h4>{group.title}</h4>
+                      <p>{group.skills.join(" · ")}</p>
+                      <a className="text-link" href={group.href}>
+                        {group.evidence} <ArrowUpRight size={15} aria-hidden="true" />
+                      </a>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
-          <div id="experience" className="section section-tinted">
-            <div className="container experience-layout">
-              <SectionTitle
-                label="Experience"
-                nested
-                title="Professional experience."
-                description="A career spanning business software, technical support, and project coordination."
-              />
-              <ol className="timeline">
-                {experience.map((job, index) => (
-                  <li key={`${job.company}-${job.period}`}>
-                    <p className="job-period">
-                      {job.period}
-                      {index === 0 && <span>Current role</span>}
-                    </p>
-                    <h4>{job.role}</h4>
-                    <p className="job-company">
-                      {job.company}
-                      {job.location && <span> · {job.location}</span>}
-                    </p>
-                    <p className="job-summary">{job.highlights[0]}</p>
-                    {job.company === "REDHQ" && (
-                      <a className="text-link" href="#redhq">
-                        Explore the work{" "}
-                        <ArrowUpRight size={15} aria-hidden="true" />
-                      </a>
-                    )}
-                    {job.company === "SKYUNITECH" && (
-                      <a className="text-link" href="#skyunitech">
-                        Explore the integrations{" "}
-                        <ArrowUpRight size={15} aria-hidden="true" />
-                      </a>
-                    )}
-                    {job.company === "BGHMC" && (
-                      <a className="text-link" href="#bghmc">
-                        Explore the systems{" "}
-                        <ArrowUpRight size={15} aria-hidden="true" />
-                      </a>
-                    )}
-                  </li>
-                ))}
-              </ol>
+        </section>
+
+        <section id="experience" className="section" aria-labelledby="experience-heading">
+          <div className="container section-split">
+            <div className="section-intro" data-animate="reveal">
+              <p className="section-index">02 / Experience</p>
+              <h2 id="experience-heading">Experience</h2>
+              <p>Building software and coordinating the processes around it.</p>
             </div>
+            <ol className="timeline">
+              {experience.map((job, index) => (
+                <li key={job.company + job.period} data-animate="reveal">
+                  <div className="job-period">
+                    <span>{job.period}</span>
+                    {index === 0 && <span className="current-role">Current role</span>}
+                  </div>
+                  <h3>{job.role}</h3>
+                  <p className="job-company">
+                    {job.company}{job.location && <span> · {job.location}</span>}
+                  </p>
+                  <ul className="job-highlights">
+                    {job.highlights.map((highlight) => (
+                      <li key={highlight}>{highlight}</li>
+                    ))}
+                  </ul>
+                  {(["REDHQ", "SKYUNITECH", "BGHMC"] as string[]).includes(job.company) && (
+                    <a className="text-link" href={"#" + job.company.toLowerCase()}>
+                      View related project <ArrowUpRight size={15} aria-hidden="true" />
+                    </a>
+                  )}
+                </li>
+              ))}
+            </ol>
           </div>
-          <div id="capabilities" className="section container">
-            <SectionTitle
-              label="Technical capabilities"
-              nested
-              title="Technical capabilities."
-              description="A foundation in server-side development, with the tools to support the complete application."
-            />
-            <div className="capabilities">
-              {skillGroups.map((group) => (
-                <article key={group.title} className="capability">
-                  <h4>{group.title}</h4>
-                  <p>{group.skills.join(" · ")}</p>
-                  <a className="text-link" href={group.href}>
-                    {group.evidence}
-                    <ArrowUpRight size={15} aria-hidden="true" />
-                  </a>
+        </section>
+
+        <section id="projects" className="section section-band" aria-labelledby="projects-heading">
+          <div className="container">
+            <div className="section-intro projects-intro" data-animate="reveal">
+              <p className="section-index">03 / Projects</p>
+              <h2 id="projects-heading">Projects</h2>
+            </div>
+            <div className="project-list">
+              {caseStudies.map((project) => (
+                <article id={project.id} key={project.id} className="project-card" data-animate="reveal">
+                  <h3>{project.name}</h3>
+                  <div className="project-content">
+                    <p className="project-description">{project.description}</p>
+                    <p className="project-tech" aria-label={project.name + " technology stack"}>
+                      {project.techStack.join(" · ")}
+                    </p>
+                  </div>
                 </article>
               ))}
             </div>
           </div>
         </section>
-        <section id="projects" className="section container">
-          <h2 className="projects-heading">Project</h2>
-          <div className="project-grid">
-            {caseStudies.map((project) => (
-              <article
-                id={project.id}
-                key={project.id}
-                className="project-card"
-              >
-                <h3>{project.name}</h3>
-                <p className="project-description">{project.description}</p>
-                <div className="project-stack">
-                  <p className="technical-label">Tech stack</p>
-                  {project.techStack.length > 0 ? (
-                    <ul
-                      className="tag-list"
-                      aria-label={`${project.name} tech stack`}
-                    >
-                      {project.techStack.map((tech) => (
-                        <li key={tech}>
-                          <Badge variant="outline">{tech}</Badge>
-                        </li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p className="stack-pending">Not specified</p>
-                  )}
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-        <section id="contact" className="section container contact">
-          <p className="eyebrow">Contact</p>
-          <h2>
-            Let’s talk about the
-            <br />
-            systems you’re building.
-          </h2>
-          <p>
-            Have a backend engineering opportunity or a business application in
-            mind? I’d welcome a conversation.
-          </p>
-          <a className="contact-email" href={`mailto:${profile.email}`}>
-            {profile.email}
-            <ArrowUpRight aria-hidden="true" />
-          </a>
-          <div className="contact-links">
-            <a href={`tel:${profile.phoneHref}`}>{profile.phone}</a>
-            <a href={profile.github} target="_blank" rel="noopener noreferrer">
-              GitHub <ArrowUpRight size={16} aria-hidden="true" />
-              <span className="sr-only"> (opens in a new tab)</span>
+
+        <section id="contact" className="section container contact" aria-labelledby="contact-heading">
+          <div data-animate="reveal">
+            <p className="section-index">04 / Contact</p>
+            <h2 id="contact-heading">Let&apos;s build something useful.</h2>
+            <p className="contact-copy">
+              Interested in working together on backend systems or business applications?
+              Get in touch.
+            </p>
+            <a className="contact-email" href={"mailto:" + profile.email}>
+              {profile.email} <ArrowUpRight aria-hidden="true" />
             </a>
-            <a href={`mailto:${profile.email}`}>
-              <Mail size={16} aria-hidden="true" />
-              Send an email
-            </a>
+            <div className="contact-links">
+              <a href={profile.github} target="_blank" rel="noopener noreferrer">
+                <Github size={17} aria-hidden="true" /> GitHub
+                <span className="sr-only"> (opens in a new tab)</span>
+              </a>
+              <a href={"mailto:" + profile.email}>
+                <Mail size={17} aria-hidden="true" /> Email
+              </a>
+              <a href={"tel:" + profile.phoneHref}>{profile.phone}</a>
+            </div>
           </div>
         </section>
       </main>
+
       <footer className="container footer">
-        <p>
-          © {new Date().getFullYear()} {profile.name}
-        </p>
-        <a href="#top">
-          Back to top{" "}
-          <ArrowRight size={16} className="-rotate-90" aria-hidden="true" />
-        </a>
+        <p>© {new Date().getFullYear()} {profile.name}</p>
+        <a href="#top">Back to top <ArrowRight size={16} className="-rotate-90" aria-hidden="true" /></a>
       </footer>
     </>
   );

@@ -28,8 +28,8 @@ export default function Home() {
       <main id="main">
         <section id="top" className="hero container" aria-labelledby="hero-title">
           <div className="hero-intro">
-            <p className="hero-name" data-animate="hero">{profile.name}</p>
-            <h1 id="hero-title" data-animate="hero">{profile.title}</h1>
+            <p className="hero-role" data-animate="hero">{profile.title}</p>
+            <h1 id="hero-title" data-animate="hero">{profile.name}</h1>
             <div className="hero-actions" data-animate="hero">
               <Button asChild size="lg">
                 <a href="#projects">

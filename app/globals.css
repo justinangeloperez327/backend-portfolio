@@ -160,7 +160,7 @@ a:hover { color: var(--emerald); }
   padding-block: 110px 120px;
 }
 .hero-intro { width: 100%; max-width: 920px; }
-.hero-name {
+.hero-role {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -171,7 +171,7 @@ a:hover { color: var(--emerald); }
   font-weight: 500;
   letter-spacing: 0.035em;
 }
-.hero-name::before { content: ""; width: 22px; height: 1px; background: var(--emerald); }
+.hero-role::before { content: ""; width: 22px; height: 1px; background: var(--emerald); }
 .hero h1 {
   max-width: 1080px;
   font-size: clamp(3.5rem, 8vw, 6.75rem);

@@ -28,15 +28,8 @@ export default function Home() {
       <main id="main">
         <section id="top" className="hero container" aria-labelledby="hero-title">
           <div className="hero-intro">
-            <p className="hero-role" data-animate="hero">{profile.title}</p>
-            <h1 id="hero-title" data-animate="hero">{profile.name}</h1>
-            <p className="hero-statement" data-animate="hero">
-              I build the systems behind everyday business operations.
-            </p>
-            <p className="hero-summary" data-animate="hero">
-              From travel supplier integrations to real estate platforms and
-              hospital workflows, I develop practical backend-driven software.
-            </p>
+            <p className="hero-name" data-animate="hero">{profile.name}</p>
+            <h1 id="hero-title" data-animate="hero">{profile.title}</h1>
             <div className="hero-actions" data-animate="hero">
               <Button asChild size="lg">
                 <a href="#projects">
@@ -58,7 +51,7 @@ export default function Home() {
         <section id="about" className="section section-band" aria-labelledby="about-heading">
           <div className="container section-split">
             <div className="section-intro" data-animate="reveal">
-              <p className="section-index">01 / About</p>
+              <p className="section-index">api/about</p>
               <h2 id="about-heading">About</h2>
             </div>
             <div className="about-content">
@@ -94,7 +87,7 @@ export default function Home() {
         <section id="experience" className="section" aria-labelledby="experience-heading">
           <div className="container section-split">
             <div className="section-intro" data-animate="reveal">
-              <p className="section-index">02 / Experience</p>
+              <p className="section-index">api/experience</p>
               <h2 id="experience-heading">Experience</h2>
               <p>Building software and coordinating the processes around it.</p>
             </div>
@@ -128,7 +121,7 @@ export default function Home() {
         <section id="projects" className="section section-band" aria-labelledby="projects-heading">
           <div className="container">
             <div className="section-intro projects-intro" data-animate="reveal">
-              <p className="section-index">03 / Projects</p>
+              <p className="section-index">api/projects</p>
               <h2 id="projects-heading">Projects</h2>
             </div>
             <div className="project-list">
@@ -149,7 +142,7 @@ export default function Home() {
 
         <section id="contact" className="section container contact" aria-labelledby="contact-heading">
           <div data-animate="reveal">
-            <p className="section-index">04 / Contact</p>
+            <p className="section-index">api/contact</p>
             <h2 id="contact-heading">Let&apos;s build something useful.</h2>
             <p className="contact-copy">
               Interested in working together on backend systems or business applications?

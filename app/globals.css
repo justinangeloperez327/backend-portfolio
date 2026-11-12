@@ -160,32 +160,25 @@ a:hover { color: var(--emerald); }
   padding-block: 110px 120px;
 }
 .hero-intro { width: 100%; max-width: 920px; }
-.hero-role {
+.hero-name {
   display: flex;
   align-items: center;
   gap: 12px;
   margin: 0;
   color: var(--emerald);
   font-family: var(--font-heading), sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0.035em;
 }
-.hero-role::before { content: ""; width: 22px; height: 1px; background: var(--emerald); }
-.hero h1 { font-size: clamp(3.25rem, 7.2vw, 5.6rem); margin: 18px 0 20px; letter-spacing: -0.065em; text-wrap: balance; }
-.hero-statement {
-  margin: 0;
-  max-width: 760px;
-  color: #d5dbe1;
-  font-family: var(--font-heading), sans-serif;
-  font-size: clamp(1.3rem, 2.4vw, 1.95rem);
-  font-weight: 500;
-  line-height: 1.45;
-  letter-spacing: -0.025em;
+.hero-name::before { content: ""; width: 22px; height: 1px; background: var(--emerald); }
+.hero h1 {
+  max-width: 1080px;
+  font-size: clamp(3.5rem, 8vw, 6.75rem);
+  margin: 20px 0 0;
+  letter-spacing: -0.065em;
   text-wrap: balance;
 }
-.hero-summary { max-width: 650px; margin: 18px 0 0; color: var(--muted-foreground); font-size: 17px; line-height: 1.8; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
 .hero-actions [data-slot="button"] {
   height: 48px;
@@ -287,8 +280,7 @@ a:hover { color: var(--emerald); }
   .wordmark-copy { font-size: 12px; }
   .wordmark small { font-size: 10px; }
   .hero { padding-block: 76px 86px; }
-  .hero h1 { font-size: clamp(2.65rem, 11vw, 4rem); }
-  .hero-summary { font-size: 15px; }
+  .hero h1 { font-size: clamp(2.7rem, 11.5vw, 4.25rem); }
   .hero-actions [data-slot="button"] { padding-inline: 15px; font-size: 13px; }
   .section { padding-block: 64px; }
   .about-copy p { font-size: 16px; }

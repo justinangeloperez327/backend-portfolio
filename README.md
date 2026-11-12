@@ -6,7 +6,8 @@ The personal portfolio of **Justin Angelo Perez**, a backend engineer focused on
 
 - Near-black charcoal (`#090C10`) with restrained emerald (`#34D399`) accents
 - Space Grotesk headings and Inter body typography
-- Four navigation sections: About, Experience, Projects, Contact
+- Four navigation sections: About, Experience, Projects, Contact, with API-inspired section labels (`api/about`, `api/experience`, `api/projects`, `api/contact`)
+- Minimal hero with the portfolio owner's name and **Backend Engineer** as the prominent headline
 - Minimal project cards showing names, implemented functionality, and confirmed technology stacks
 - GSAP hero and ScrollTrigger reveal animations that run once and respect reduced-motion settings
 

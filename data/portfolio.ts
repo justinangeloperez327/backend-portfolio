@@ -139,6 +139,7 @@ export const education = {
 export const introduction = {
   about: [
     "I’m Justin, a software developer based in Abu Dhabi. My work spans property platforms, travel services, and hospital operations — systems shaped by the people who use them every day.",
-    "I bring development experience alongside practical knowledge of operational workflows, project documentation, and stakeholder coordination. That context helps me translate business requirements into software.",
+    "I bring development experience alongside practical knowledge of operational workflows, project documentation, and stakeholder coordination.",
+    "That context helps me translate business requirements into software.",
   ],
 } as const;

@@ -74,7 +74,7 @@ export default function Home() {
                   {"    "}<span className="code-white">$rates</span> = <span className="code-white">Http</span>::<span className="code-white">get</span>(<span className="code-white">$this-&gt;endpoint</span>)-&gt;<span className="code-white">throw</span>()-&gt;<span className="code-white">json</span>();{"\n"}
                   {"    "}<span className="code-green">foreach</span> (<span className="code-white">$rates</span> <span className="code-green">as</span> <span className="code-white">$rate</span>) {"{"}{"\n"}
                   {"      "}<span className="code-white">SupplierRate</span>::<span className="code-white">updateOrCreate</span>({"\n"}
-                  {"        "}[<span className="code-white">'supplier_id'</span> =&gt; <span className="code-white">$rate['supplier_id']</span>],{"\n"}
+                  {"        "}[<span className="code-white">{"'supplier_id'"}</span> =&gt; <span className="code-white">{"$rate['supplier_id']"}</span>],{"\n"}
                   {"        "}<span className="code-white">$this-&gt;normalize</span>(<span className="code-white">$rate</span>){"\n"}
                   {"      "});{"\n"}
                   {"    }"}{"\n"}

@@ -91,11 +91,16 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="about" className="section section-band" aria-labelledby="about-heading">
+        <section id="about" className="section section-band about-section" aria-labelledby="about-heading">
           <div className="container section-split">
             <div className="section-intro" data-animate="reveal">
               <p className="section-index">api/about</p>
               <h2 id="about-heading">About</h2>
+              <dl className="about-quick-facts" aria-label="Quick facts">
+                <div><dt>Location</dt><dd>{profile.location}</dd></div>
+                <div><dt>Focus</dt><dd>Backend development</dd></div>
+                <div><dt>Stack</dt><dd>PHP, Laravel, Node.js, MySQL</dd></div>
+              </dl>
             </div>
             <div className="about-content">
               <div className="about-copy" data-animate="reveal">
@@ -115,7 +120,13 @@ export default function Home() {
                   {skillGroups.map((group) => (
                     <div key={group.title} className="capability">
                       <h4>{group.title}</h4>
-                      <p>{group.skills.join(" · ")}</p>
+                      <ul className="skill-tags" aria-label={group.title + " technologies"}>
+                        {group.skills.map((skill) => (
+                          <li key={skill} className={"skill-tag" + (skill === "PHP" || skill === "Laravel" ? " skill-tag-primary" : "")}>
+                            {skill}
+                          </li>
+                        ))}
+                      </ul>
                       <a className="text-link" href={group.href}>
                         {group.evidence} <ArrowUpRight size={15} aria-hidden="true" />
                       </a>

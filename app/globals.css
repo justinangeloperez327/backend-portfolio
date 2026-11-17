@@ -126,7 +126,7 @@ a:hover { color: var(--emerald); }
   align-items: center;
   position: relative;
   min-height: 44px;
-  color: #b2bbc5;
+  color: #c3cbd4;
   font-family: var(--font-heading), sans-serif;
   font-size: 14px;
   font-weight: 500;
@@ -159,7 +159,27 @@ a:hover { color: var(--emerald); }
   align-items: center;
   padding-block: 110px 120px;
 }
-.hero-intro { width: 100%; max-width: 920px; }
+.hero-layout { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); gap: clamp(28px, 4vw, 56px); align-items: center; width: 100%; }
+.hero-intro { min-width: 0; width: 100%; }
+.hero-showcase { min-width: 0; width: 100%; }
+.hero-tagline { margin: 24px 0 0; color: #d6dde4; font-size: clamp(1.3rem, 2.5vw, 2rem); font-weight: 500; line-height: 1.35; letter-spacing: -0.035em; }
+.hero-description { max-width: 580px; margin: 18px 0 0; color: #c6cfd8; font-size: 17px; line-height: 1.75; }
+.hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.hero-tag { display: inline-flex; align-items: center; min-height: 30px; padding: 4px 11px; border: 1px solid #66717c; border-radius: 999px; color: #d1d8df; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px; line-height: 1.4; }
+.hero-tag-accent { color: var(--emerald); border-color: var(--emerald); }
+.hero-code-card, .hero-stat-card { background: #111820; border: 1px solid #35414d; border-radius: 14px; }
+.hero-code-card { overflow: hidden; }
+.hero-code-header { display: flex; align-items: center; gap: 14px; padding: 13px 17px; border-bottom: 1px solid #35414d; color: #bfc8d1; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px; }
+.hero-window-dots { display: flex; gap: 6px; }
+.hero-window-dots i { width: 8px; height: 8px; border-radius: 50%; background: #78828d; }
+.hero-code { margin: 0; padding: 20px 17px; overflow-x: auto; color: #f0f2f4; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px; line-height: 1.8; tab-size: 2; }
+.code-green { color: var(--emerald); }
+.code-white { color: #f0f2f4; }
+.code-comment { color: #aeb9c5; }
+.hero-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
+.hero-stat-card { display: flex; flex-direction: column; gap: 9px; padding: 17px 12px; min-width: 0; }
+.hero-stat-card strong { color: var(--foreground); font-family: var(--font-heading), sans-serif; font-size: clamp(24px, 2.8vw, 34px); font-weight: 600; line-height: 1; }
+.hero-stat-card span { color: #c6cfd8; font-size: 12px; line-height: 1.45; overflow-wrap: break-word; }
 .hero-role {
   display: flex;
   align-items: center;
@@ -190,9 +210,9 @@ a:hover { color: var(--emerald); }
   box-shadow: none;
   transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
-.hero-actions [data-slot="button"]:first-child:hover { background: #d6dde2; color: var(--background); transform: translateY(-1px); }
-.hero-actions [data-slot="button"][class*="border-border"]:hover { background: var(--secondary); color: var(--foreground); border-color: #52606c; }
-.hero-location { margin: 34px 0 0; color: #83909d; font-size: 13px; }
+.hero-actions [data-slot="button"]:first-child:hover { background: #ffffff; color: var(--background); transform: translateY(-1px); }
+.hero-actions [data-slot="button"][class*="border-border"]:hover { background: #202b35; color: var(--foreground); border-color: #75818d; }
+.hero-location { margin: 24px 0 0; color: #bec8d2; font-size: 14px; }
 .hero-location span { margin-inline: 8px; color: var(--emerald); }
 
 .section { padding-block: 110px; }
@@ -269,6 +289,8 @@ a:hover { color: var(--emerald); }
   .menu-toggle { display: inline-flex; margin-left: auto; }
   .header-inner { min-height: 74px; }
   .hero { min-height: auto; padding-block: 95px 110px; }
+  .hero-layout { grid-template-columns: 1fr; }
+  .hero-showcase { max-width: 700px; }
   .section { padding-block: 80px; }
   .section-split { grid-template-columns: 1fr; gap: 32px; }
   .section-intro > p:last-child:not(.section-index) { max-width: 600px; }

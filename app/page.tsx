@@ -66,7 +66,7 @@ export default function Home() {
                   <span>SupplierSync.php</span>
                 </div>
                 <pre className="hero-code"><code>
-                  <span className="code-comment">// Sync supplier rates in the background</span>{"\n"}
+                  <span className="code-comment">{"// Sync supplier rates in the background"}</span>{"\n"}
                   <span className="code-green">class</span> <span className="code-white">SupplierSync</span> <span className="code-green">implements</span> <span className="code-white">ShouldQueue</span>{"\n"}
                   {"{"}{"\n"}
                   {"  "}<span className="code-green">public function</span> <span className="code-white">handle</span>(): <span className="code-green">void</span>{"\n"}

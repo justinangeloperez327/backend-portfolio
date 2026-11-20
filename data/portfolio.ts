@@ -83,7 +83,7 @@ export const experience = [
     role: "Project Coordinator",
     company: "Giffin Al Jazira Metal Industries LLC",
     location: "Abu Dhabi, UAE",
-    period: "Apr 2026 — Present",
+    period: "Apr 2026 – Present",
     highlights: [
       "Coordinate site progress, material requisitions, and outstanding actions with the Project Manager and site teams.",
       "Prepare daily progress reports, respond to consultant correspondence, and maintain project documentation.",
@@ -93,17 +93,17 @@ export const experience = [
     role: "Software Developer",
     company: "SKYUNITECH",
     location: "",
-    period: "Oct 2025 — Jan 2026",
+    period: "Oct 2025 – Jan 2026",
     highlights: [
       "Developed features for a travel agency web application.",
-      "Integrated Hotelbeds, Expedia, Travelport, and Nirvana APIs, with approved certifications, into SKYUNITECH.",
+      "Integrated the Hotelbeds, Expedia, Travelport, and Nirvana APIs and passed each provider’s integration certification.",
     ],
   },
   {
     role: "Full Stack Developer",
     company: "REDHQ",
     location: "",
-    period: "Feb 2021 — Jun 2025",
+    period: "Feb 2021 – Jun 2025",
     highlights: [
       "Developed web applications for an Australian real estate business using PHP, Laravel, MySQL, JavaScript, HTML, and CSS.",
       "Built property listing management, advertising material ordering, and accounting functionality for real estate companies.",
@@ -115,7 +115,7 @@ export const experience = [
     role: "Software Developer",
     company: "Dhalogiq",
     location: "",
-    period: "Mar 2020 — Feb 2021",
+    period: "Mar 2020 – Feb 2021",
     highlights: [
       "Supported REDHQ as an assigned software developer, contributing to its web applications before transitioning to direct employment with the client.",
     ],
@@ -124,10 +124,9 @@ export const experience = [
     role: "Software Developer",
     company: "BGHMC",
     location: "",
-    period: "Dec 2018 — Feb 2020",
+    period: "Dec 2018 – Feb 2020",
     highlights: [
       "Created procurement, inventory management, and queuing systems supporting hospital operations.",
-      "Troubleshot desktop computers and laptops, providing hardware and software support to staff.",
     ],
   },
 ] as const;

@@ -14,6 +14,8 @@ import {
   experience,
   profile,
   introduction,
+  primarySkills,
+  quickFacts,
   skillGroups,
 } from "@/data/portfolio";
 
@@ -96,16 +98,16 @@ export default function Home() {
             <div className="section-intro" data-animate="reveal">
               <p className="section-index">api/about</p>
               <h2 id="about-heading">About</h2>
-              <dl className="about-quick-facts" aria-label="Quick facts">
-                <div><dt>Location</dt><dd>{profile.location}</dd></div>
-                <div><dt>Focus</dt><dd>Backend development</dd></div>
-                <div><dt>Stack</dt><dd>PHP, Laravel, Node.js, MySQL</dd></div>
+              <dl className="about-quick-facts">
+                {quickFacts.map((fact) => (
+                  <div key={fact.label}><dt>{fact.label}</dt><dd>{fact.value}</dd></div>
+                ))}
               </dl>
             </div>
             <div className="about-content">
               <div className="about-copy" data-animate="reveal">
-                {introduction.about.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
+                {introduction.about.map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
                 ))}
               </div>
               <div className="education" data-animate="reveal">
@@ -122,7 +124,7 @@ export default function Home() {
                       <h4>{group.title}</h4>
                       <ul className="skill-tags" aria-label={group.title + " technologies"}>
                         {group.skills.map((skill) => (
-                          <li key={skill} className={"skill-tag" + (skill === "PHP" || skill === "Laravel" ? " skill-tag-primary" : "")}>
+                          <li key={skill} className={"skill-tag" + (primarySkills.includes(skill) ? " skill-tag-primary" : "")}>
                             {skill}
                           </li>
                         ))}

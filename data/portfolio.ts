@@ -11,6 +11,14 @@ export const profile = {
     "Software developer with over six years of professional development experience building business applications across real estate, travel, and healthcare. Experienced in PHP, Laravel, MySQL, third-party API integration, and dashboard development. Work includes property listings, order management, accounting, procurement, inventory, and queuing systems. Combines development experience with practical knowledge of operational workflows, project documentation, and stakeholder coordination.",
 } as const;
 
+export const quickFacts = [
+  { label: "Location", value: profile.location },
+  { label: "Focus", value: "Backend development" },
+  { label: "Stack", value: "PHP, Laravel, Node.js, MySQL" },
+] as const;
+
+export const primarySkills: readonly string[] = ["PHP", "Laravel"];
+
 export const caseStudies = [
   {
     id: "skyunitech",
@@ -139,7 +147,6 @@ export const education = {
 export const introduction = {
   about: [
     "I’m Justin, a software developer based in Abu Dhabi. My work spans property platforms, travel services, and hospital operations — systems shaped by the people who use them every day.",
-    "I bring development experience alongside practical knowledge of operational workflows, project documentation, and stakeholder coordination.",
-    "That context helps me translate business requirements into software.",
+    "I bring development experience alongside practical knowledge of operational workflows, project documentation, and stakeholder coordination. That context helps me translate business requirements into software.",
   ],
 } as const;

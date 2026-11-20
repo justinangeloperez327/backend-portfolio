@@ -19,6 +19,8 @@ import {
   skillGroups,
 } from "@/data/portfolio";
 
+const projectIds = new Set<string>(caseStudies.map((project) => project.id));
+
 export default function Home() {
   return (
     <>
@@ -148,11 +150,11 @@ export default function Home() {
               <p>Building software and coordinating the processes around it.</p>
             </div>
             <ol className="timeline">
-              {experience.map((job, index) => (
+              {experience.map((job) => (
                 <li key={job.company + job.period} data-animate="reveal">
                   <div className="job-period">
                     <span>{job.period}</span>
-                    {index === 0 && <span className="current-role">Current role</span>}
+                    {job.period.endsWith("Present") && <span className="current-role">Current role</span>}
                   </div>
                   <h3>{job.role}</h3>
                   <p className="job-company">
@@ -163,8 +165,12 @@ export default function Home() {
                       <li key={highlight}>{highlight}</li>
                     ))}
                   </ul>
-                  {(["REDHQ", "SKYUNITECH", "BGHMC"] as string[]).includes(job.company) && (
-                    <a className="text-link" href={"#" + job.company.toLowerCase()}>
+                  {projectIds.has(job.company.toLowerCase()) && (
+                    <a
+                      className="text-link"
+                      href={"#" + job.company.toLowerCase()}
+                      aria-label={"View related project: " + job.company}
+                    >
                       View related project <ArrowUpRight size={15} aria-hidden="true" />
                     </a>
                   )}

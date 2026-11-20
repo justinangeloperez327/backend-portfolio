@@ -74,6 +74,22 @@ export const skillGroups = [
   },
 ] as const;
 
+type Skill = (typeof skillGroups)[number]["skills"][number];
+
+const skillsOf = (title: string): readonly Skill[] =>
+  skillGroups.find((group) => group.title === title)?.skills ?? [];
+
+export const quickFacts = [
+  { label: "Location", value: profile.location },
+  { label: "Focus", value: "Backend development" },
+  {
+    label: "Stack",
+    value: [...skillsOf("Backend development"), ...skillsOf("Databases").slice(0, 1)].join(", "),
+  },
+] as const;
+
+export const primarySkills: readonly Skill[] = ["PHP", "Laravel"];
+
 export const experience = [
   {
     role: "Project Coordinator",
@@ -139,7 +155,6 @@ export const education = {
 export const introduction = {
   about: [
     "I’m Justin, a software developer based in Abu Dhabi. My work spans property platforms, travel services, and hospital operations — systems shaped by the people who use them every day.",
-    "I bring development experience alongside practical knowledge of operational workflows, project documentation, and stakeholder coordination.",
-    "That context helps me translate business requirements into software.",
+    "I bring development experience alongside practical knowledge of operational workflows, project documentation, and stakeholder coordination. That context helps me translate business requirements into software.",
   ],
 } as const;

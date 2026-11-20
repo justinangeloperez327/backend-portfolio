@@ -238,7 +238,7 @@ a:hover { color: var(--emerald); }
 .capabilities { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 28px; }
 .capability { padding: 20px 0 23px; border-top: 1px solid var(--border); }
 .capability h4 { margin: 0 0 10px; font-size: 17px; }
-.capability:last-child { grid-column: 1 / -1; }
+.capability:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
 .skill-tag { padding: 6px 12px; border: 1px solid #64717f; border-radius: 999px; color: #c0cad4; font-family: var(--font-body), "Segoe UI", sans-serif; font-size: 13px; line-height: 1.5; }
 .skill-tag-primary { color: var(--emerald); border-color: var(--emerald); }

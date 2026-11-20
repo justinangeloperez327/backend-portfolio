@@ -11,14 +11,6 @@ export const profile = {
     "Software developer with over six years of professional development experience building business applications across real estate, travel, and healthcare. Experienced in PHP, Laravel, MySQL, third-party API integration, and dashboard development. Work includes property listings, order management, accounting, procurement, inventory, and queuing systems. Combines development experience with practical knowledge of operational workflows, project documentation, and stakeholder coordination.",
 } as const;
 
-export const quickFacts = [
-  { label: "Location", value: profile.location },
-  { label: "Focus", value: "Backend development" },
-  { label: "Stack", value: "PHP, Laravel, Node.js, MySQL" },
-] as const;
-
-export const primarySkills: readonly string[] = ["PHP", "Laravel"];
-
 export const caseStudies = [
   {
     id: "skyunitech",
@@ -81,6 +73,22 @@ export const skillGroups = [
     evidence: "Browse repositories",
   },
 ] as const;
+
+type Skill = (typeof skillGroups)[number]["skills"][number];
+
+const skillsOf = (title: string): readonly Skill[] =>
+  skillGroups.find((group) => group.title === title)?.skills ?? [];
+
+export const quickFacts = [
+  { label: "Location", value: profile.location },
+  { label: "Focus", value: "Backend development" },
+  {
+    label: "Stack",
+    value: [...skillsOf("Backend development"), ...skillsOf("Databases").slice(0, 1)].join(", "),
+  },
+] as const;
+
+export const primarySkills: readonly Skill[] = ["PHP", "Laravel"];
 
 export const experience = [
   {

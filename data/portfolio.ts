@@ -49,18 +49,6 @@ export const skillGroups = [
     evidence: "Business application development",
   },
   {
-    title: "Service integrations",
-    skills: [
-      "Third-party APIs",
-      "Hotelbeds",
-      "Expedia",
-      "Travelport",
-      "Nirvana",
-    ],
-    href: "#skyunitech",
-    evidence: "Travel service integrations",
-  },
-  {
     title: "Frontend support",
     skills: ["JavaScript", "HTML", "CSS", "React.js", "Next.js", "Vue.js"],
     href: "#redhq",

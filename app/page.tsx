@@ -184,16 +184,27 @@ export default function Home() {
             <div className="section-intro projects-intro" data-animate="reveal">
               <p className="section-index">api/projects</p>
               <h2 id="projects-heading">Projects</h2>
+              <p>Systems I’ve built for real estate and healthcare teams.</p>
             </div>
             <div className="project-list">
               {caseStudies.map((project) => (
                 <article id={project.id} key={project.id} className="project-card" data-animate="reveal">
-                  <h3>{project.name}</h3>
+                  <div>
+                    <h3>{project.title}</h3>
+                    <p className="project-client">{project.client}</p>
+                  </div>
                   <div className="project-content">
                     <p className="project-description">{project.description}</p>
-                    <p className="project-tech" aria-label={project.name + " technology stack"}>
-                      {project.techStack.join(" · ")}
-                    </p>
+                    <ul className="project-highlights">
+                      {project.highlights.map((highlight) => (
+                        <li key={highlight}>{highlight}</li>
+                      ))}
+                    </ul>
+                    <ul className="skill-tags" aria-label={project.name + " technology stack"}>
+                      {project.techStack.map((tech) => (
+                        <li key={tech} className="skill-tag">{tech}</li>
+                      ))}
+                    </ul>
                   </div>
                 </article>
               ))}

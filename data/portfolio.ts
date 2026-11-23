@@ -5,6 +5,7 @@ export const profile = {
   location: "Abu Dhabi, UAE",
   email: "justinangeloperez327@gmail.com",
   github: "https://github.com/justinangeloperez327",
+  linkedin: "https://www.linkedin.com/in/justrax/",
   summary:
     "Software developer with over seven years of professional development experience building business applications across real estate, travel, and healthcare. Experienced in PHP, Laravel, MySQL, and dashboard development. Work includes property listings, order management, accounting, procurement, inventory, and queuing systems. Combines development experience with practical knowledge of operational workflows, project documentation, and stakeholder coordination.",
 } as const;

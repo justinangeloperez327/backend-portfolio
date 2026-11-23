@@ -3,6 +3,7 @@ import {
   ArrowRight,
   ArrowUpRight,
   Github,
+  Linkedin,
   Mail,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -214,6 +215,10 @@ export default function Home() {
             <div className="contact-links">
               <a href={profile.github} target="_blank" rel="noopener noreferrer">
                 <Github size={17} aria-hidden="true" /> GitHub
+                <span className="sr-only"> (opens in a new tab)</span>
+              </a>
+              <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
+                <Linkedin size={17} aria-hidden="true" /> LinkedIn
                 <span className="sr-only"> (opens in a new tab)</span>
               </a>
             </div>

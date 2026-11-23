@@ -4,9 +4,11 @@ import {
   ArrowUpRight,
   Github,
   Mail,
+  Phone,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/portfolio/header";
+import { CurrentYear } from "@/components/portfolio/current-year";
 import { PortfolioMotion } from "@/components/portfolio/motion";
 import {
   caseStudies,
@@ -208,24 +210,23 @@ export default function Home() {
               Get in touch.
             </p>
             <a className="contact-email" href={"mailto:" + profile.email}>
-              {profile.email} <ArrowUpRight aria-hidden="true" />
+              <Mail aria-hidden="true" /> {profile.email}
             </a>
             <div className="contact-links">
               <a href={profile.github} target="_blank" rel="noopener noreferrer">
                 <Github size={17} aria-hidden="true" /> GitHub
                 <span className="sr-only"> (opens in a new tab)</span>
               </a>
-              <a href={"mailto:" + profile.email}>
-                <Mail size={17} aria-hidden="true" /> Email
+              <a href={"tel:" + profile.phoneHref}>
+                <Phone size={17} aria-hidden="true" /> {profile.phone}
               </a>
-              <a href={"tel:" + profile.phoneHref}>{profile.phone}</a>
             </div>
           </div>
         </section>
       </main>
 
       <footer className="container footer">
-        <p>© {new Date().getFullYear()} {profile.name}</p>
+        <p>© <CurrentYear fallback={new Date().getFullYear()} /> {profile.name}</p>
         <a href="#top">Back to top <ArrowRight size={16} className="-rotate-90" aria-hidden="true" /></a>
       </footer>
     </>

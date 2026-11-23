@@ -40,6 +40,20 @@ export const caseStudies = [
     ],
     techStack: ["Laravel", "PHP", "Microsoft SQL Server", "JavaScript"],
   },
+  {
+    id: "mymoovz",
+    name: "MyMoovz",
+    title: "Moving-house helper platform",
+    client: "MyMoovz · RealMarket Pty Ltd, Australia",
+    description:
+      "MyMoovz is a free cloud platform that guides people through moving house and organises the tasks and services involved in a move. Built with Laravel, Vue and MySQL.",
+    highlights: [
+      "Week-by-week moving guide: a checklist timed to the move date, from six weeks out to moving day.",
+      "Service links for energy, internet, water and packing supplies, so movers can organise connections in one place.",
+      "Account sign-up, sign-in, password reset and token-based access, plus a trial mode to try the helper before registering.",
+    ],
+    techStack: ["Laravel", "PHP", "MySQL", "Vue.js", "Bootstrap"],
+  },
 ] as const;
 
 export const skillGroups = [

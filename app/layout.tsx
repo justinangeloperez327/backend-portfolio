@@ -17,7 +17,7 @@ const body = Inter({
 export const metadata: Metadata = {
   title: "Justin Angelo Perez | Backend Engineer",
   description:
-    "Portfolio of Justin Angelo Perez, a backend engineer specializing in PHP and Laravel, business applications, API integrations, and relational databases.",
+    "Portfolio of Justin Angelo Perez, a backend engineer specializing in PHP and Laravel, business applications, and relational databases.",
   applicationName: "Justin Angelo Perez — Backend Portfolio",
   keywords: [
     "Justin Angelo Perez",

@@ -13,13 +13,6 @@ export const profile = {
 
 export const caseStudies = [
   {
-    id: "skyunitech",
-    name: "SKYUNITECH",
-    description:
-      "Integrated Hotelbeds, Expedia, Travelport, and Nirvana APIs into SKYUNITECH, with approved integration certifications.",
-    techStack: ["Laravel", "PHP", "MySQL", "MongoDB", "Vue.js", "JavaScript"],
-  },
-  {
     id: "redhq",
     name: "REDHQ",
     description:

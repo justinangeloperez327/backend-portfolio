@@ -1,6 +1,6 @@
 # Backend Portfolio
 
-The personal portfolio of **Justin Angelo Perez**, a backend engineer focused on Laravel, PHP, API integrations, databases, and software for day-to-day business operations.
+The personal portfolio of **Justin Angelo Perez**, a backend engineer focused on Laravel, PHP, databases, and software for day-to-day business operations.
 
 ## Design
 

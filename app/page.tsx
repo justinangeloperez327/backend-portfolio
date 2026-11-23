@@ -56,7 +56,6 @@ export default function Home() {
               <div className="hero-tags" data-animate="hero" aria-label="Specialties">
                 <span className="hero-tag hero-tag-accent">PHP</span>
                 <span className="hero-tag hero-tag-accent">Laravel</span>
-                <span className="hero-tag">API integrations</span>
                 <span className="hero-tag">Workflow systems</span>
               </div>
               <p className="hero-location" data-animate="hero">

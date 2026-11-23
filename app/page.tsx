@@ -184,7 +184,7 @@ export default function Home() {
             <div className="section-intro projects-intro" data-animate="reveal">
               <p className="section-index">api/projects</p>
               <h2 id="projects-heading">Projects</h2>
-              <p>Systems I’ve built for real estate and healthcare teams.</p>
+              <p>Systems I’ve built for real estate, property and healthcare teams.</p>
             </div>
             <div className="project-list">
               {caseStudies.map((project) => (

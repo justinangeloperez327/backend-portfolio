@@ -3,8 +3,8 @@ import {
   ArrowRight,
   ArrowUpRight,
   Github,
+  Linkedin,
   Mail,
-  Phone,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/portfolio/header";
@@ -228,8 +228,9 @@ export default function Home() {
                 <Github size={17} aria-hidden="true" /> GitHub
                 <span className="sr-only"> (opens in a new tab)</span>
               </a>
-              <a href={"tel:" + profile.phoneHref}>
-                <Phone size={17} aria-hidden="true" /> {profile.phone}
+              <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
+                <Linkedin size={17} aria-hidden="true" /> LinkedIn
+                <span className="sr-only"> (opens in a new tab)</span>
               </a>
             </div>
           </div>

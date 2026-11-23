@@ -67,21 +67,20 @@ export default function Home() {
               <div className="hero-code-card">
                 <div className="hero-code-header">
                   <span className="hero-window-dots" aria-hidden="true"><i /><i /><i /></span>
-                  <span>SupplierSync.php</span>
+                  <span>Justin.php</span>
                 </div>
                 <pre className="hero-code"><code>
-                  <span className="code-comment">{"// Sync supplier rates in the background"}</span>{"\n"}
-                  <span className="code-green">class</span> <span className="code-white">SupplierSync</span> <span className="code-green">implements</span> <span className="code-white">ShouldQueue</span>{"\n"}
+                  <span className="code-comment">{"// Backend engineer based in Abu Dhabi"}</span>{"\n"}
+                  <span className="code-green">class</span> <span className="code-white">Justin</span> <span className="code-green">extends</span> <span className="code-white">Developer</span>{"\n"}
                   {"{"}{"\n"}
-                  {"  "}<span className="code-green">public function</span> <span className="code-white">handle</span>(): <span className="code-green">void</span>{"\n"}
+                  {"  "}<span className="code-green">protected array</span> <span className="code-white">$stack</span> = [<span className="code-white">{"'PHP'"}</span>, <span className="code-white">{"'Laravel'"}</span>, <span className="code-white">{"'MySQL'"}</span>];{"\n"}
+                  {"\n"}
+                  {"  "}<span className="code-green">public function</span> <span className="code-white">handle</span>(<span className="code-white">Requirements</span> <span className="code-white">$brief</span>): <span className="code-white">Software</span>{"\n"}
                   {"  {"}{"\n"}
-                  {"    "}<span className="code-white">$rates</span> = <span className="code-white">Http</span>::<span className="code-white">get</span>(<span className="code-white">$this-&gt;endpoint</span>)-&gt;<span className="code-white">throw</span>()-&gt;<span className="code-white">json</span>();{"\n"}
-                  {"    "}<span className="code-green">foreach</span> (<span className="code-white">$rates</span> <span className="code-green">as</span> <span className="code-white">$rate</span>) {"{"}{"\n"}
-                  {"      "}<span className="code-white">SupplierRate</span>::<span className="code-white">updateOrCreate</span>({"\n"}
-                  {"        "}[<span className="code-white">{"'supplier_id'"}</span> =&gt; <span className="code-white">{"$rate['supplier_id']"}</span>],{"\n"}
-                  {"        "}<span className="code-white">$this-&gt;normalize</span>(<span className="code-white">$rate</span>){"\n"}
-                  {"      "});{"\n"}
-                  {"    }"}{"\n"}
+                  {"    "}<span className="code-green">return</span> <span className="code-white">$this-&gt;understand</span>(<span className="code-white">$brief</span>){"\n"}
+                  {"      "}-&gt;<span className="code-white">design</span>(){"\n"}
+                  {"      "}-&gt;<span className="code-white">build</span>(){"\n"}
+                  {"      "}-&gt;<span className="code-white">ship</span>();{"\n"}
                   {"  }"}{"\n"}
                   {"}"}
                 </code></pre>

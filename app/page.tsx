@@ -88,7 +88,6 @@ export default function Home() {
               <div className="hero-stats">
                 <div className="hero-stat-card"><strong>4</strong><span>industries: healthcare, real estate, travel, construction</span></div>
                 <div className="hero-stat-card"><strong>7+</strong><span>years building backends</span></div>
-                <div className="hero-stat-card"><strong>6+</strong><span>integrations in production</span></div>
               </div>
             </div>
           </div>

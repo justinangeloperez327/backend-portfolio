@@ -4,8 +4,6 @@ export const profile = {
   specialty: "PHP & Laravel",
   location: "Abu Dhabi, UAE",
   email: "justinangeloperez327@gmail.com",
-  phone: "+971 52 347 2306",
-  phoneHref: "+971523472306",
   github: "https://github.com/justinangeloperez327",
   summary:
     "Software developer with over seven years of professional development experience building business applications across real estate, travel, and healthcare. Experienced in PHP, Laravel, MySQL, and dashboard development. Work includes property listings, order management, accounting, procurement, inventory, and queuing systems. Combines development experience with practical knowledge of operational workflows, project documentation, and stakeholder coordination.",

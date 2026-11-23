@@ -4,7 +4,6 @@ import {
   ArrowUpRight,
   Github,
   Mail,
-  Phone,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/portfolio/header";
@@ -216,9 +215,6 @@ export default function Home() {
               <a href={profile.github} target="_blank" rel="noopener noreferrer">
                 <Github size={17} aria-hidden="true" /> GitHub
                 <span className="sr-only"> (opens in a new tab)</span>
-              </a>
-              <a href={"tel:" + profile.phoneHref}>
-                <Phone size={17} aria-hidden="true" /> {profile.phone}
               </a>
             </div>
           </div>

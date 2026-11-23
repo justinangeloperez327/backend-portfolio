@@ -4,9 +4,11 @@ import {
   ArrowUpRight,
   Github,
   Mail,
+  Phone,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/portfolio/header";
+import { CurrentYear } from "@/components/portfolio/current-year";
 import { PortfolioMotion } from "@/components/portfolio/motion";
 import {
   caseStudies,
@@ -56,7 +58,6 @@ export default function Home() {
               <div className="hero-tags" data-animate="hero" aria-label="Specialties">
                 <span className="hero-tag hero-tag-accent">PHP</span>
                 <span className="hero-tag hero-tag-accent">Laravel</span>
-                <span className="hero-tag">API integrations</span>
                 <span className="hero-tag">Workflow systems</span>
               </div>
               <p className="hero-location" data-animate="hero">
@@ -67,29 +68,27 @@ export default function Home() {
               <div className="hero-code-card">
                 <div className="hero-code-header">
                   <span className="hero-window-dots" aria-hidden="true"><i /><i /><i /></span>
-                  <span>SupplierSync.php</span>
+                  <span>Justin.php</span>
                 </div>
                 <pre className="hero-code"><code>
-                  <span className="code-comment">{"// Sync supplier rates in the background"}</span>{"\n"}
-                  <span className="code-green">class</span> <span className="code-white">SupplierSync</span> <span className="code-green">implements</span> <span className="code-white">ShouldQueue</span>{"\n"}
+                  <span className="code-comment">{"// Backend engineer based in Abu Dhabi"}</span>{"\n"}
+                  <span className="code-green">class</span> <span className="code-white">Justin</span> <span className="code-green">extends</span> <span className="code-white">Developer</span>{"\n"}
                   {"{"}{"\n"}
-                  {"  "}<span className="code-green">public function</span> <span className="code-white">handle</span>(): <span className="code-green">void</span>{"\n"}
+                  {"  "}<span className="code-green">protected array</span> <span className="code-white">$stack</span> = [<span className="code-white">{"'PHP'"}</span>, <span className="code-white">{"'Laravel'"}</span>, <span className="code-white">{"'MySQL'"}</span>];{"\n"}
+                  {"\n"}
+                  {"  "}<span className="code-green">public function</span> <span className="code-white">handle</span>(<span className="code-white">Requirements</span> <span className="code-white">$brief</span>): <span className="code-white">Software</span>{"\n"}
                   {"  {"}{"\n"}
-                  {"    "}<span className="code-white">$rates</span> = <span className="code-white">Http</span>::<span className="code-white">get</span>(<span className="code-white">$this-&gt;endpoint</span>)-&gt;<span className="code-white">throw</span>()-&gt;<span className="code-white">json</span>();{"\n"}
-                  {"    "}<span className="code-green">foreach</span> (<span className="code-white">$rates</span> <span className="code-green">as</span> <span className="code-white">$rate</span>) {"{"}{"\n"}
-                  {"      "}<span className="code-white">SupplierRate</span>::<span className="code-white">updateOrCreate</span>({"\n"}
-                  {"        "}[<span className="code-white">{"'supplier_id'"}</span> =&gt; <span className="code-white">{"$rate['supplier_id']"}</span>],{"\n"}
-                  {"        "}<span className="code-white">$this-&gt;normalize</span>(<span className="code-white">$rate</span>){"\n"}
-                  {"      "});{"\n"}
-                  {"    }"}{"\n"}
+                  {"    "}<span className="code-green">return</span> <span className="code-white">$this-&gt;understand</span>(<span className="code-white">$brief</span>){"\n"}
+                  {"      "}-&gt;<span className="code-white">design</span>(){"\n"}
+                  {"      "}-&gt;<span className="code-white">build</span>(){"\n"}
+                  {"      "}-&gt;<span className="code-white">ship</span>();{"\n"}
                   {"  }"}{"\n"}
                   {"}"}
                 </code></pre>
               </div>
               <div className="hero-stats">
-                <div className="hero-stat-card"><strong>3</strong><span>industries: travel, real estate, healthcare</span></div>
-                <div className="hero-stat-card"><strong>6+</strong><span>years building backends</span></div>
-                <div className="hero-stat-card"><strong>6+</strong><span>integrations in production</span></div>
+                <div className="hero-stat-card"><strong>4</strong><span>industries: healthcare, real estate, travel, construction</span></div>
+                <div className="hero-stat-card"><strong>7+</strong><span>years building backends</span></div>
               </div>
             </div>
           </div>
@@ -211,24 +210,23 @@ export default function Home() {
               Get in touch.
             </p>
             <a className="contact-email" href={"mailto:" + profile.email}>
-              {profile.email} <ArrowUpRight aria-hidden="true" />
+              <Mail aria-hidden="true" /> {profile.email}
             </a>
             <div className="contact-links">
               <a href={profile.github} target="_blank" rel="noopener noreferrer">
                 <Github size={17} aria-hidden="true" /> GitHub
                 <span className="sr-only"> (opens in a new tab)</span>
               </a>
-              <a href={"mailto:" + profile.email}>
-                <Mail size={17} aria-hidden="true" /> Email
+              <a href={"tel:" + profile.phoneHref}>
+                <Phone size={17} aria-hidden="true" /> {profile.phone}
               </a>
-              <a href={"tel:" + profile.phoneHref}>{profile.phone}</a>
             </div>
           </div>
         </section>
       </main>
 
       <footer className="container footer">
-        <p>© {new Date().getFullYear()} {profile.name}</p>
+        <p>© <CurrentYear fallback={new Date().getFullYear()} /> {profile.name}</p>
         <a href="#top">Back to top <ArrowRight size={16} className="-rotate-90" aria-hidden="true" /></a>
       </footer>
     </>

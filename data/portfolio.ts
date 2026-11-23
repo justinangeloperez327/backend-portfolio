@@ -15,15 +15,30 @@ export const caseStudies = [
   {
     id: "redhq",
     name: "REDHQ",
+    title: "Real estate operations platform",
+    client: "REDHQ · Australian real estate agencies",
     description:
-      "Developed property listing management, advertising material ordering, accounting functionality, and the application dashboard for real estate companies.",
+      "REDHQ (Real Estate Digital Headquarters) is the back-office platform agencies use to run listings, marketing and reporting across their offices. I built and maintained modules in Laravel and MySQL, delivering features from the team’s Jira backlog.",
+    highlights: [
+      "Corporate dashboard reporting appraisals, listings, sales and settlements month over month, with GCI totals, portal engagement and top offices and agents.",
+      "Property pipeline tracking each listing’s status, overdue tasks and marketing assets across offices, synced with the agency CRM.",
+      "Marketing order management: supplier jobs, supplier and vendor pricing, print schedules and proof emails for every campaign.",
+      "Accounting for campaign costs and the application dashboard agents use day to day.",
+    ],
     techStack: ["Laravel", "PHP", "MySQL", "Vue.js", "React", "JavaScript"],
   },
   {
     id: "bghmc",
     name: "BGHMC",
+    title: "Hospital procurement, inventory & queuing",
+    client: "Baguio General Hospital and Medical Center",
     description:
-      "Created procurement, inventory management, and patient queuing systems for hospital operations.",
+      "Internal systems for a government hospital in Baguio City, built for the staff who handle supplies and patient flow every day.",
+    highlights: [
+      "Procurement system tracking purchase requests, approvals and purchase orders for hospital departments.",
+      "Inventory system for supplies: stock levels, deliveries and issuance to departments.",
+      "Patient queuing system that issues queue numbers and calls patients to service windows.",
+    ],
     techStack: ["Laravel", "PHP", "Microsoft SQL Server", "JavaScript"],
   },
 ] as const;

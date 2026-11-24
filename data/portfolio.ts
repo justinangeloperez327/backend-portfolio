@@ -16,6 +16,7 @@ export const caseStudies = [
     name: "REDHQ",
     title: "Real estate operations platform",
     client: "REDHQ · Australian real estate agencies",
+    link: "https://redhq.com.au/",
     description:
       "REDHQ (Real Estate Digital Headquarters) is the back-office platform agencies use to run listings, marketing and reporting across their offices. I built and maintained modules in Laravel and MySQL, delivering features from the team’s Jira backlog.",
     highlights: [
@@ -45,6 +46,7 @@ export const caseStudies = [
     name: "MyMoovz",
     title: "Moving-house helper platform",
     client: "MyMoovz · RealMarket Pty Ltd, Australia",
+    link: "https://go.mymoovz.com/",
     description:
       "MyMoovz is a free cloud platform that guides people through moving house and organises the tasks and services involved in a move. Built with Laravel, Vue and MySQL.",
     highlights: [

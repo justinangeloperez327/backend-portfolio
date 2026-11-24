@@ -6,6 +6,8 @@ import {
   Linkedin,
   Mail,
 } from "lucide-react";
+import Link from "next/link";
+
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/portfolio/header";
 import { CurrentYear } from "@/components/portfolio/current-year";
@@ -205,6 +207,10 @@ export default function Home() {
                         <li key={tech} className="skill-tag">{tech}</li>
                       ))}
                     </ul>
+                    <Link className="text-link project-more" href={"/projects/" + project.id}>
+                      View case study<span className="sr-only">: {project.title}</span>
+                      <ArrowUpRight size={15} aria-hidden="true" />
+                    </Link>
                   </div>
                 </article>
               ))}

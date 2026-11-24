@@ -1,15 +1,16 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { profile } from "@/data/portfolio";
 
 const links = [
-  { label: "Home", href: "#top" },
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/#top" },
+  { label: "About", href: "/#about" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export function Header() {
@@ -29,7 +30,7 @@ export function Header() {
       { rootMargin: "-15% 0px -65% 0px", threshold: 0 },
     );
     links.forEach(({ href }) => {
-      const element = document.querySelector(href);
+      const element = document.getElementById(href.split("#")[1]);
       if (element) observer.observe(element);
     });
     return () => observer.disconnect();
@@ -46,20 +47,20 @@ export function Header() {
       }}
     >
       <div className="container header-inner">
-        <a
-          href="#top"
+        <Link
+          href="/#top"
           className="wordmark"
           aria-label="Justin Angelo Perez, return to top"
           onClick={() => setOpen(false)}
         >
           <span className="monogram" aria-hidden="true">JP<span>.</span></span>
           <span className="wordmark-copy">{profile.name}<small>{profile.title}</small></span>
-        </a>
+        </Link>
         <nav className="desktop-nav" aria-label="Main navigation">
           {links.map((link) => (
-            <a key={link.href} href={link.href} aria-current={active === link.href ? "location" : undefined}>
+            <Link key={link.href} href={link.href} aria-current={active === link.href ? "location" : undefined}>
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
         <button
@@ -76,9 +77,9 @@ export function Header() {
       </div>
       <nav id="mobile-navigation" className="mobile-nav container" aria-label="Mobile navigation" hidden={!open}>
         {links.map((link) => (
-          <a key={link.href} href={link.href} onClick={() => setOpen(false)} aria-current={active === link.href ? "location" : undefined}>
+          <Link key={link.href} href={link.href} onClick={() => setOpen(false)} aria-current={active === link.href ? "location" : undefined}>
             {link.label} <ArrowUpRight size={16} aria-hidden="true" />
-          </a>
+          </Link>
         ))}
       </nav>
     </header>

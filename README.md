@@ -58,6 +58,14 @@ data/
 
 To update project copy, confirmed tech stacks, employment, or contact details, edit `data/portfolio.ts`. Keep existing projects unless explicitly removing them.
 
+## Project screenshots
+
+Each project has its own page at `/projects/<slug>` (`redhq`, `mymoovz`, `bghmc`). To add screenshots, drop image files (`.png`, `.jpg`, `.webp` or `.avif`) into `public/projects/<slug>/` and redeploy; the gallery appears automatically.
+
+- Files are shown in name order, so prefix them `01-`, `02-`, …
+- The caption comes from the file name: `02-corporate-dashboard.png` becomes "Corporate dashboard".
+- Blur names, phone numbers, addresses and figures from real client data before adding a screenshot.
+
 ## Deployment
 
 Deploy manually to any supported Next.js host (including Vercel). No automatic Vercel deployment workflow is configured.

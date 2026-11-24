@@ -65,11 +65,12 @@ export function Header() {
         </nav>
         <button
           ref={toggleRef}
-          className="menu-toggle"
+          className="menu-toggle has-tooltip tooltip-below"
           type="button"
           aria-expanded={open}
           aria-controls="mobile-navigation"
           aria-label={open ? "Close navigation" : "Open navigation"}
+          data-tooltip={open ? "Close navigation" : "Open navigation"}
           onClick={() => setOpen(!open)}
         >
           {open ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}

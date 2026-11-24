@@ -16,9 +16,9 @@ export function PortfolioMotion() {
     const context = gsap.context(() => {
       gsap.from('[data-animate="hero"]', {
         autoAlpha: 0,
-        y: 22,
-        duration: 0.7,
-        stagger: 0.1,
+        y: 16,
+        duration: 0.3,
+        stagger: 0.03,
         ease: "power2.out",
         clearProps: "all",
       });
@@ -26,8 +26,8 @@ export function PortfolioMotion() {
       gsap.utils.toArray<HTMLElement>('[data-animate="reveal"]').forEach((element) => {
         gsap.from(element, {
           autoAlpha: 0,
-          y: 20,
-          duration: 0.65,
+          y: 16,
+          duration: 0.3,
           ease: "power2.out",
           clearProps: "all",
           scrollTrigger: {

@@ -48,20 +48,20 @@ export default function Home() {
               <div className="hero-actions" data-animate="hero">
                 <Button asChild size="lg">
                   <a href="#projects">
-                    View Projects <ArrowDown aria-hidden="true" />
+                    View projects <ArrowDown aria-hidden="true" />
                   </a>
                 </Button>
                 <Button asChild size="lg" variant="outline">
                   <a href="#contact">
-                    Contact Me <ArrowUpRight aria-hidden="true" />
+                    Contact me <ArrowUpRight aria-hidden="true" />
                   </a>
                 </Button>
               </div>
-              <div className="hero-tags" data-animate="hero" aria-label="Specialties">
-                <span className="hero-tag hero-tag-accent">PHP</span>
-                <span className="hero-tag hero-tag-accent">Laravel</span>
-                <span className="hero-tag">Workflow systems</span>
-              </div>
+              <ul className="hero-tags inline-list" data-animate="hero" aria-label="Specialties">
+                <li className="is-primary">PHP</li>
+                <li className="is-primary">Laravel</li>
+                <li>Workflow systems</li>
+              </ul>
               <p className="hero-location" data-animate="hero">
                 {profile.location} <span aria-hidden="true">/</span> Open to backend roles
               </p>
@@ -125,9 +125,9 @@ export default function Home() {
                   {skillGroups.map((group) => (
                     <div key={group.title} className="capability">
                       <h4>{group.title}</h4>
-                      <ul className="skill-tags" aria-label={group.title + " technologies"}>
+                      <ul className="inline-list" aria-label={group.title + " technologies"}>
                         {group.skills.map((skill) => (
-                          <li key={skill} className={"skill-tag" + (primarySkills.includes(skill) ? " skill-tag-primary" : "")}>
+                          <li key={skill} className={primarySkills.includes(skill) ? "is-primary" : undefined}>
                             {skill}
                           </li>
                         ))}
@@ -202,9 +202,9 @@ export default function Home() {
                         <li key={highlight}>{highlight}</li>
                       ))}
                     </ul>
-                    <ul className="skill-tags" aria-label={project.name + " technology stack"}>
+                    <ul className="inline-list" aria-label={project.name + " technology stack"}>
                       {project.techStack.map((tech) => (
-                        <li key={tech} className="skill-tag">{tech}</li>
+                        <li key={tech}>{tech}</li>
                       ))}
                     </ul>
                     <Link className="text-link project-more" href={"/projects/" + project.id}>
@@ -245,7 +245,7 @@ export default function Home() {
 
       <footer className="container footer">
         <p>© <CurrentYear fallback={new Date().getFullYear()} /> {profile.name}</p>
-        <a href="#top">Back to top <ArrowRight size={16} className="-rotate-90" aria-hidden="true" /></a>
+        <a href="#top">Return to top <ArrowRight size={16} className="-rotate-90" aria-hidden="true" /></a>
       </footer>
     </>
   );

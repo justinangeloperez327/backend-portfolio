@@ -35,6 +35,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
   if (!project) notFound();
 
   const images = getProjectImages(project.id, project.name);
+  const related = caseStudies.filter((other) => other.id !== project.id);
 
   return (
     <>
@@ -44,7 +45,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
       <Header />
       <main id="main" className="container project-page">
         <Link className="text-link project-back" href="/#projects">
-          <ArrowLeft size={15} aria-hidden="true" /> All projects
+          <ArrowLeft size={15} aria-hidden="true" /> View all projects
         </Link>
 
         <header className="project-page-header">
@@ -65,9 +66,9 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
           </div>
           <aside className="project-page-meta">
             <h2>Tech stack</h2>
-            <ul className="skill-tags" aria-label={project.name + " technology stack"}>
+            <ul className="inline-list" aria-label={project.name + " technology stack"}>
               {project.techStack.map((tech) => (
-                <li key={tech} className="skill-tag">{tech}</li>
+                <li key={tech}>{tech}</li>
               ))}
             </ul>
             {"link" in project && project.link && (
@@ -85,11 +86,27 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
             <ProjectGallery images={images} />
           </section>
         )}
+
+        {related.length > 0 && (
+          <section className="project-related" aria-labelledby="related-heading">
+            <h2 id="related-heading">More projects</h2>
+            <ul className="related-list">
+              {related.map((other) => (
+                <li key={other.id}>
+                  <Link href={"/projects/" + other.id}>
+                    <strong>{other.title}</strong>
+                    <span>{other.client}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
       </main>
 
       <footer className="container footer">
         <p>© <CurrentYear fallback={new Date().getFullYear()} /> {profile.name}</p>
-        <Link href="/#projects">Back to projects</Link>
+        <Link href="/#projects">Return to projects</Link>
       </footer>
     </>
   );

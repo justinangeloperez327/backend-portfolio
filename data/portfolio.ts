@@ -63,19 +63,19 @@ export const skillGroups = [
     title: "Backend development",
     skills: ["PHP", "Laravel", "Node.js"],
     href: "#redhq",
-    evidence: "Real estate applications",
+    evidence: "View real estate work",
   },
   {
     title: "Databases",
     skills: ["MySQL", "Microsoft SQL Server", "MongoDB", "SQL"],
     href: "#redhq",
-    evidence: "Business application development",
+    evidence: "View business systems",
   },
   {
     title: "Frontend support",
     skills: ["JavaScript", "HTML", "CSS", "React.js", "Next.js", "Vue.js"],
     href: "#redhq",
-    evidence: "Application interfaces and dashboards",
+    evidence: "View dashboard work",
   },
   {
     title: "Development tools",

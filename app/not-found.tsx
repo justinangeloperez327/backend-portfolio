@@ -11,7 +11,7 @@ export default function NotFound() {
       </div>
       <p className="font-mono text-xs tracking-[0.2em] text-primary">404 / NOT FOUND</p>
       <h1 className="mt-4 text-4xl font-semibold tracking-tight">This page doesn&apos;t exist.</h1>
-      <p className="mt-4 max-w-md text-base leading-7 text-muted-foreground">
+      <p className="mt-4 max-w-md text-base leading-6 text-muted-foreground">
         The route you requested isn&apos;t part of this portfolio.
       </p>
       <Button asChild size="lg" className="mt-8 rounded-xl">

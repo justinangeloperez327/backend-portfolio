@@ -55,15 +55,33 @@ export function ProjectGallery({ images }: { images: ProjectImage[] }) {
         <div className="gallery-controls">
           {images.length > 1 && (
             <>
-              <button type="button" onClick={() => step(-1)} aria-label="Previous screenshot">
+              <button
+                type="button"
+                className="has-tooltip"
+                onClick={() => step(-1)}
+                aria-label="Show previous screenshot"
+                data-tooltip="Show previous screenshot (←)"
+              >
                 <ChevronLeft aria-hidden="true" />
               </button>
-              <button type="button" onClick={() => step(1)} aria-label="Next screenshot">
+              <button
+                type="button"
+                className="has-tooltip"
+                onClick={() => step(1)}
+                aria-label="Show next screenshot"
+                data-tooltip="Show next screenshot (→)"
+              >
                 <ChevronRight aria-hidden="true" />
               </button>
             </>
           )}
-          <button type="button" onClick={() => dialogRef.current?.close()} aria-label="Close viewer">
+          <button
+            type="button"
+            className="has-tooltip"
+            onClick={() => dialogRef.current?.close()}
+            aria-label="Close viewer"
+            data-tooltip="Close viewer (Esc)"
+          >
             <X aria-hidden="true" />
           </button>
         </div>
